@@ -1,0 +1,22 @@
+import type { NavigationMenuItem } from "@nuxt/ui";
+
+export const tutorialsList: NavigationMenuItem[] = [
+  {
+    label: "HTML",
+    description: "Learn the basic blocks of web development.",
+    to: "/courses/html",
+    icon: "uil:html5",
+  },
+  {
+    label: "CSS",
+    description: "Learn the basic blocks of web development.",
+    to: "/courses/css",
+    icon: "ri:css3-fill",
+  },
+  {
+    label: "JavaScript",
+    description: "Learn the basic blocks of web development.",
+    to: "/courses/javascript",
+    icon: "ri:javascript-fill",
+  },
+];
