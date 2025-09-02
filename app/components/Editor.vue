@@ -21,7 +21,7 @@ const { showCopyBtn = true } = defineProps<{
       </small>
     </section>
     <div class="code_container overflow-auto relative">
-      <span ref="text" class="[&>pre]:text-pretty [&>pre]:m-0">
+      <span ref="text" class="[&>pre]:text-pretty [&>pre]:m-0 [&>pre]:rounded-t-none">
         <slot></slot>
       </span>
       <CopyButton

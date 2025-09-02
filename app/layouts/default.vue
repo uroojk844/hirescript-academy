@@ -84,7 +84,6 @@ const sidebar = computed<NavigationMenuItem[]>(() => {
       :items="menuItems"
       class="flex-1 mx-auto justify-center hidden md:flex"
     />
-
     <Themes />
   </header>
   
