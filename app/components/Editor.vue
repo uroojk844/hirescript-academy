@@ -50,7 +50,7 @@ function togglePreview() {
 @reference "~/assets/css/main.css";
 
 .code > pre {
-  @apply text-pretty bg-slate-900 p-4;
+  @apply text-wrap bg-slate-900 p-4;
   margin: 0;
   border-top: 0;
 }
