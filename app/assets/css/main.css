@@ -5,7 +5,8 @@
 
 @theme {
   --font-sans: "Public Sans", sans-serif;
-  --ui-container: 1400px;
+  --ui-container: 1920px;
+  --ui-bg: #030712;
 }
 
 html,
@@ -19,15 +20,20 @@ body {
   height: 100%;
 }
 
+.container {
+  max-width: var(--ui-container);
+  margin-inline: auto;
+}
+
 button {
   cursor: pointer;
 }
 
-.code_container::-webkit-scrollbar {
-  height: 8px;
+::-webkit-scrollbar {
+  width: 8px;
   background: #0f172a;
 }
 
-.code_container::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: #1e3263;
 }

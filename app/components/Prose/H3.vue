@@ -1,11 +1,11 @@
 <template>
-    <h2>
+    <h3>
         <slot></slot>
-    </h2>
+    </h3>
 </template>
 
 <style>
-h2{
-    margin-block: 20px !important;
+h3{
+    margin-block: 16px !important;
 }
 </style>

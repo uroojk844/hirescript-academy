@@ -3,10 +3,16 @@ const text = ref<HTMLSpanElement>();
 const { showCopyBtn = true } = defineProps<{
   showCopyBtn?: boolean;
 }>();
+
+const preview = ref(false);
+
+function togglePreview() {
+  preview.value = !preview.value;
+}
 </script>
 
 <template>
-  <div class="bg-slate-950 rounded-md my-8 max-w-3xl">
+  <div class="bg-slate-900 rounded-md overflow-hidden my-8 max-w-3xl relative">
     <section
       class="flex justify-between items-center py-2 px-4 border-b border-slate-800"
     >
@@ -16,27 +22,36 @@ const { showCopyBtn = true } = defineProps<{
         <span class="block size-2.5 rounded-full bg-green-400"></span>
       </div>
 
-      <small class="[&>p]:m-0">
-        <slot name="title">index.html</slot>
-      </small>
+      <div class="flex items-center gap-3">
+        <small class="[&>p]:m-0">
+          <slot name="title">index.html</slot>
+        </small>
+
+        <button @click="togglePreview" class="grid place-items-center">
+          <icon name="uil:play" class="cursor-pointer" />
+        </button>
+        <CopyButton v-if="showCopyBtn" :text="text?.textContent || ''" />
+      </div>
     </section>
-    <div class="code_container overflow-auto relative">
-      <span ref="text" class="[&>pre]:text-pretty [&>pre]:m-0 [&>pre]:rounded-t-none">
+    <div class="code_container aspect-video overflow-auto relative">
+      <span v-show="!preview" ref="text" class="code">
         <slot></slot>
       </span>
-      <CopyButton
-        v-if="showCopyBtn"
-        class="bottom-2.5 top-auto right-2.5"
-        :text="text?.textContent || ''"
-      />
+      <iframe
+        v-if="preview"
+        class="bg-white inset-0 size-full absolute top-0"
+        :srcdoc="text?.textContent"
+      ></iframe>
     </div>
   </div>
 </template>
 
-<style scoped> 
-@reference "@/assets/css/main.css";
+<style>
+@reference "~/assets/css/main.css";
 
-li {
-  @apply size-2.5 rounded-full;
+.code > pre {
+  @apply text-pretty bg-slate-900 p-4;
+  margin: 0;
+  border-top: 0;
 }
 </style>

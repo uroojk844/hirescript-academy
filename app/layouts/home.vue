@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NavigationMenuItem, TabsItem } from "@nuxt/ui";
+import type { NavigationMenuItem } from "@nuxt/ui";
 import { tutorialsList } from "~/assets/data/tutorials-list";
 
 const menuItems: NavigationMenuItem[] = [
@@ -47,9 +47,7 @@ const menuItems: NavigationMenuItem[] = [
     <Themes />
   </header>
 
-  <LazyUContainer>
-    <main class="p-4">
-      <NuxtPage />
-    </main>
-  </LazyUContainer>
+  <main class="p-4 container">
+    <NuxtPage />
+  </main>
 </template>

@@ -6,6 +6,6 @@
 
 <style>
 h1{
-    margin-block: 16px !important;
+    margin-block: 24px !important;
 }
 </style>

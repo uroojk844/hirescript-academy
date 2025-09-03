@@ -25,7 +25,7 @@ const tabs: TabsItem[] = [
 ];
 
 const { data: courses } = await useAsyncData("courses", () =>
-queryCollectionNavigation("content")
+  queryCollectionNavigation("content").order("navigation", "ASC")
 );
 
 const route = useRoute();
@@ -40,6 +40,10 @@ const sidebar = computed<NavigationMenuItem[]>(() => {
         })) || []
     );
   } else return [];
+});
+
+const currentRouteIndex = computed(() => {
+  return sidebar.value.findIndex((i) => i.to == route.path);
 });
 </script>
 
@@ -86,15 +90,24 @@ const sidebar = computed<NavigationMenuItem[]>(() => {
     />
     <Themes />
   </header>
-  
-  <LazyUContainer as="section" hydrate-on-visible>
-    <div class="grid md:grid-cols-[250px_auto] h-full">
-      <aside class="hidden md:grid p-4 gap-4 border-r border-accented">
-        <u-navigation-menu :items="sidebar" orientation="vertical" />
-      </aside>
-      <main class="p-4 prose lg:prose-xl dark:prose-invert max-w-none">
-        <nuxt-page />
-      </main>
-    </div>
-  </LazyUContainer>
+
+  <div class="grid md:grid-cols-[280px_auto] h-[calc(100vh-65px)] container">
+    <aside
+      class="hidden md:grid p-4 gap-4 border-r border-accented overflow-x-hidden"
+    >
+      <u-navigation-menu :items="sidebar" orientation="vertical" />
+    </aside>
+    <main
+      class="p-4 prose lg:prose-xl dark:prose-invert max-w-none overflow-y-auto"
+    >
+      <nuxt-page />
+
+      <div class="flex gap-8 justify-end">
+        <UButton variant="soft" :to="sidebar[currentRouteIndex - 1]?.to">
+          Prev
+        </UButton>
+        <UButton :to="sidebar[currentRouteIndex + 1]?.to">Next</UButton>
+      </div>
+    </main>
+  </div>
 </template>
