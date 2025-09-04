@@ -36,7 +36,7 @@ const menuItems: NavigationMenuItem[] = [
         </template>
       </USlideover>
 
-      <nuxt-link to="/" class="text-xl">Hirescript</nuxt-link>
+      <Logo />
     </div>
 
     <lazy-u-navigation-menu

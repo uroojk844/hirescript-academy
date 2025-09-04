@@ -1,6 +1,6 @@
 <template>
   <code
-    class="border border-dashed py-0.5 px-2 rounded bg-slate-800 border-accented"
+    class="border border-dashed py-0.5 px-2 rounded dark:bg-slate-800 border-accented"
   >
     <slot></slot>
   </code>

@@ -48,7 +48,9 @@ const currentRouteIndex = computed(() => {
 </script>
 
 <template>
-  <header class="px-4 py-2 flex items-center gap-2 border-b border-b-accented">
+  <header
+    class="print:hidden px-4 py-2 flex items-center gap-2 border-b border-b-accented"
+  >
     <div class="flex-1 flex gap-2 items-center">
       <USlideover title="Hirescript" side="left" class="max-w-xs md:hidden">
         <UButton
@@ -80,7 +82,7 @@ const currentRouteIndex = computed(() => {
           </UTabs>
         </template>
       </USlideover>
-      <nuxt-link to="/" class="text-xl">Hirescript</nuxt-link>
+      <Logo />
     </div>
 
     <lazy-u-navigation-menu
@@ -93,7 +95,7 @@ const currentRouteIndex = computed(() => {
 
   <div class="grid md:grid-cols-[280px_auto] h-[calc(100vh-65px)] container">
     <aside
-      class="hidden md:grid p-4 gap-4 border-r border-accented overflow-x-hidden"
+      class="hidden print:hidden md:grid p-4 gap-4 border-r border-accented overflow-x-hidden"
     >
       <u-navigation-menu :items="sidebar" orientation="vertical" />
     </aside>

@@ -6,6 +6,9 @@
 @theme {
   --font-sans: "Public Sans", sans-serif;
   --ui-container: 1920px;
+}
+
+.dark{
   --ui-bg: #030712;
 }
 
