@@ -12,7 +12,7 @@ const isDark = computed({
 </script>
 
 <template>
-  <div class="flex gap-2 items-center flex-1 justify-end">
+  <div class="flex gap-2 items-center justify-end max-lg:ml-auto">
     <ClientOnly v-if="!colorMode?.forced">
       <UButton
         :icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'"

@@ -29,7 +29,7 @@ export default defineNuxtConfig({
           content: "Hirescript Academy",
         },
         {
-          name: "apple-mobile-web-app-capable",
+          name: "mobile-web-app-capable",
           content: "yes",
         },
       ],

@@ -1,35 +1,13 @@
 <script setup lang="ts">
-import type { NavigationMenuItem, TabsItem } from "@nuxt/ui";
-import { tutorialsList } from "~/assets/data/tutorials-list";
-
-const menuItems: NavigationMenuItem[] = [
-  {
-    label: "Home",
-    to: "/",
-  },
-  {
-    label: "Tutorials",
-    children: tutorialsList,
-  },
-];
-
-const tabs: TabsItem[] = [
-  {
-    label: "Chapters",
-    slot: "chapters" as const,
-  },
-  {
-    label: "Menu",
-    slot: "menu" as const,
-  },
-];
+import type { NavigationMenuItem } from "@nuxt/ui";
 
 const { data: courses } = await useAsyncData("courses", () =>
   queryCollectionNavigation("content").order("navigation", "ASC")
 );
 
 const route = useRoute();
-const sidebar = computed<NavigationMenuItem[]>(() => {
+
+const sidebarItems = computed<NavigationMenuItem[]>(() => {
   if (route.params.course) {
     return (
       courses.value
@@ -43,61 +21,18 @@ const sidebar = computed<NavigationMenuItem[]>(() => {
 });
 
 const currentRouteIndex = computed(() => {
-  return sidebar.value.findIndex((i) => i.to == route.path);
+  return sidebarItems.value.findIndex((i) => i.to == route.path);
 });
 </script>
 
 <template>
-  <header
-    class="print:hidden px-4 py-2 flex items-center gap-2 border-b border-b-accented"
-  >
-    <div class="flex-1 flex gap-2 items-center">
-      <USlideover title="Hirescript" side="left" class="max-w-xs md:hidden">
-        <UButton
-          icon="uil:bars"
-          color="neutral"
-          variant="ghost"
-          class="p-0"
-          size="xl"
-        />
+  <AppHeader :sidebarItems />
 
-        <template #body>
-          <UTabs :items="tabs">
-            <template #chapters="{ item }">
-              <lazy-u-navigation-menu
-                orientation="vertical"
-                color="primary"
-                :items="sidebar"
-                class="flex-1 mx-auto justify-center"
-              />
-            </template>
-            <template #menu="{ item }">
-              <lazy-u-navigation-menu
-                orientation="vertical"
-                color="primary"
-                :items="menuItems"
-                class="flex-1 mx-auto justify-center"
-              />
-            </template>
-          </UTabs>
-        </template>
-      </USlideover>
-      <Logo />
-    </div>
-
-    <lazy-u-navigation-menu
-      color="primary"
-      :items="menuItems"
-      class="flex-1 mx-auto justify-center hidden md:flex"
-    />
-    <Themes />
-  </header>
-
-  <div class="grid md:grid-cols-[280px_auto] h-[calc(100vh-65px)] container">
+  <div class="grid lg:grid-cols-[280px_auto] h-[calc(100vh-65px)] container">
     <aside
-      class="hidden print:hidden md:grid p-4 gap-4 border-r border-accented overflow-x-hidden"
+      class="hidden print:hidden lg:grid p-4 gap-4 border-r border-accented overflow-x-hidden"
     >
-      <u-navigation-menu :items="sidebar" orientation="vertical" />
+      <u-navigation-menu :items="sidebarItems" orientation="vertical" />
     </aside>
     <main
       class="p-4 prose lg:prose-xl dark:prose-invert max-w-none overflow-y-auto"
@@ -105,10 +40,10 @@ const currentRouteIndex = computed(() => {
       <nuxt-page />
 
       <div class="flex gap-8 justify-end">
-        <UButton variant="soft" :to="sidebar[currentRouteIndex - 1]?.to">
+        <UButton variant="soft" :to="sidebarItems[currentRouteIndex - 1]?.to">
           Prev
         </UButton>
-        <UButton :to="sidebar[currentRouteIndex + 1]?.to">Next</UButton>
+        <UButton :to="sidebarItems[currentRouteIndex + 1]?.to">Next</UButton>
       </div>
     </main>
   </div>

@@ -1,5 +1,6 @@
 ---
 title: HTML Introduction
+description: Learn the basic blocks of web development.
 navigation:
   order: 1
 ---
