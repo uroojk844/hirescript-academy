@@ -38,7 +38,7 @@ const tabs: TabsItem[] = [
         <UButton
           icon="uil:bars"
           variant="link"
-          class="p-0 text-white"
+          class="p-0 text-slate-950 dark:text-white"
           size="xl"
         />
 
@@ -49,7 +49,7 @@ const tabs: TabsItem[] = [
               @click="close"
               icon="uil:times"
               variant="link"
-              class="p-0 text-white"
+              class="p-0 text-slate-950 dark:text-white"
               size="xl"
             />
           </div>
