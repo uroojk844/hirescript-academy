@@ -4,7 +4,6 @@ import type { NavigationMenuItem } from "@nuxt/ui";
 const { data: courses } = await useAsyncData("courses", () =>
   queryCollectionNavigation("content").order("navigation", "ASC")
 );
-
 const route = useRoute();
 
 const sidebarItems = computed<NavigationMenuItem[]>(() => {
@@ -12,7 +11,8 @@ const sidebarItems = computed<NavigationMenuItem[]>(() => {
     return (
       courses.value
         ?.find((course) => course.path.startsWith(`/${route.params.course}`))
-        ?.children?.map((child) => ({
+        ?.children?.sort((a, b) => Number(a.order) - Number(b.order))
+        ?.map((child) => ({
           label: child.title,
           to: "/courses" + child.path,
         })) || []

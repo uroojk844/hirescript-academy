@@ -2,7 +2,7 @@
 title: Semantic HTML and Accessibility
 description: Learn to use semantic HTML tags to improve structure and accessibility.
 navigation:
-  order: 5
+  order: 6
 ---
 
 # Semantic HTML and Accessibility
