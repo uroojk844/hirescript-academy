@@ -1,17 +1,22 @@
 <script setup lang="ts">
+import type { ContentNavigationItem } from "@nuxt/content";
 import type { NavigationMenuItem } from "@nuxt/ui";
 
 const { data: courses } = await useAsyncData("courses", () =>
   queryCollectionNavigation("content").order("navigation", "ASC")
 );
+
 const route = useRoute();
 
 const sidebarItems = computed<NavigationMenuItem[]>(() => {
   if (route.params.course) {
+    let topics = courses.value?.find((course) =>
+      course.path.startsWith(`/${route.params.course}`)
+    );
+
     return (
-      courses.value
-        ?.find((course) => course.path.startsWith(`/${route.params.course}`))
-        ?.children?.sort((a, b) => Number(a.order) - Number(b.order))
+      topics?.children
+        ?.sort((a, b) => Number(a.order) - Number(b.order))
         ?.map((child) => ({
           label: child.title,
           to: "/courses" + child.path,
@@ -39,7 +44,7 @@ const currentRouteIndex = computed(() => {
     >
       <nuxt-page />
 
-      <div class="flex gap-8 justify-end">
+      <div class="flex gap-8 justify-end" v-if="currentRouteIndex >= 0">
         <UButton variant="soft" :to="sidebarItems[currentRouteIndex - 1]?.to">
           Prev
         </UButton>

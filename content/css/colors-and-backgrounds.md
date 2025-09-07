@@ -82,7 +82,7 @@ index.html
         background-color: #f0f0f0;
       }
       .box {
-        background-image: url('https://via.placeholder.com/150');
+        background-image: url('https://picsum.photos/150');
         background-repeat: no-repeat;
         width: 200px;
         height: 200px;

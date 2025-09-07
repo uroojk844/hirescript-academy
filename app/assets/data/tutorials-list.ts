@@ -9,14 +9,20 @@ export const tutorialsList: NavigationMenuItem[] = [
   },
   {
     label: "CSS",
-    description: "Learn the basic blocks of web development.",
+    description: "Learn the basic of styling your webpage.",
     to: "/courses/css",
     icon: "ri:css3-fill",
   },
   {
     label: "JavaScript",
-    description: "Learn the basic blocks of web development.",
-    to: "/courses/javascript",
+    description: "Learn the basic of javascript to control events.",
+    to: "/courses/js",
     icon: "ri:javascript-fill",
+  },
+  {
+    label: "Do it yourself",
+    description: "Learn building basic blocks of website.",
+    to: "/courses/diy",
+    icon: "ri:dashboard-fill",
   },
 ];

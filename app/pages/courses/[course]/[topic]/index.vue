@@ -16,5 +16,5 @@ const { data: home, pending } = await useAsyncData(
 <template>
   <NuxtLoadingIndicator v-if="pending" />
   <ContentRenderer v-else-if="home" :value="home" />
-  <div v-else>Not found</div>
+  <div v-else>Page not found! <NuxtLink to="/">Go Back</NuxtLink></div>
 </template>

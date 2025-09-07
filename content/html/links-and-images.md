@@ -63,7 +63,7 @@ index.html
   </head>
   <body>
     <h1>Link with Attributes</h1>
-    <p>Learn more at <a href="https://www.example.com" title="Visit Example" target="_blank">Example Website</a>.</p>
+    <p>Learn more at <a href="https://picsum.photos/200/80" title="Visit Example" target="_blank">Example Website</a>.</p>
   </body>
 </html>
 ```
@@ -90,7 +90,7 @@ index.html
   </head>
   <body>
     <h1>My Image Gallery</h1>
-    <img src="https://via.placeholder.com/150" alt="A placeholder image" />
+    <img src="https://picsum.photos/200" alt="A placeholder image" />
   </body>
 </html>
 ```
@@ -119,7 +119,7 @@ index.html
   </head>
   <body>
     <h1>Image with Attributes</h1>
-    <img src="https://via.placeholder.com/200" alt="A sample image" width="200" height="200" title="Sample Image" />
+    <img src="https://picsum.photos/200?random=2" alt="A sample image" width="200" height="200" title="Sample Image" />
   </body>
 </html>
 ```
@@ -145,7 +145,7 @@ index.html
   <body>
     <h1>Clickable Image Link</h1>
     <a href="https://www.example.com">
-      <img src="https://via.placeholder.com/150" alt="Link to Example" />
+      <img src="https://picsum.photos/200?random=3" alt="Link to Example" />
     </a>
   </body>
 </html>

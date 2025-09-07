@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const route = useRoute();
-const { data: courses, pending } = await useAsyncData(
+const { data: page, pending } = await useAsyncData(
   `${route.params.course}-first-page`,
   () => queryCollection("content").path(`/${route.params.course}`).first()
 );
 </script>
 
 <template>
-  <NuxtLoadingIndicator v-if="pending" />
-  <ContentRenderer v-else-if="courses && !pending" :value="courses" />
-  <div v-else>Not found</div>
+  <NuxtLoadingIndicator :height="8" v-if="pending" />
+  <ContentRenderer v-else-if="page && !pending" :value="page" />
+  <div v-else>Page not found! <NuxtLink to="/">Go Back</NuxtLink></div>
 </template>
