@@ -27,7 +27,7 @@ const icons = ["react", "vuejs", "cplusplus", "python", "java", "javascript"];
   <section class="max-w-6xl mx-auto px-4 md:px-8 lg:px-16 py-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
     <div class="flex flex-col gap-6 text-center lg:text-left">
       <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
-        Learn to code at <span class="text-primary">HireScript</span>
+        Learn to code at <span class="text-primary">HireScript Academy</span>
       </h1>
       <p class="text-lg sm:text-xl md:text-2xl font-medium text-gray-700 dark:text-gray-300">
         "Learn to code and unlock the power to build your own future"
