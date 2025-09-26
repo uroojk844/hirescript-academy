@@ -8,4 +8,6 @@
   <main class="p-4 container">
     <NuxtPage />
   </main>
+  <Promote/>
+  <Footer/>
 </template>

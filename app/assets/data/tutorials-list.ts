@@ -25,4 +25,10 @@ export const tutorialsList: NavigationMenuItem[] = [
     to: "/courses/diy",
     icon: "ri:dashboard-fill",
   },
+  {
+    label: "React",
+    description: "Learn building basic of React",
+    to: "/courses/react",
+    icon: "famicons:logo-react",
+  },
 ];

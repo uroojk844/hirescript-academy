@@ -22,7 +22,7 @@ JavaScript is a programming language that enables dynamic content, like updating
 
 Include JavaScript via:
 - **Internal**: `<script>` in HTML.
-- **External**: `<script src="file.js">`.
+- **External**: `<script src="file.js">`. 
 
 Example with internal JavaScript:
 
