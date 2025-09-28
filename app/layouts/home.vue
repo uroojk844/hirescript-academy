@@ -5,9 +5,8 @@
 <template>
   <AppHeader />
 
-  <main class="p-4 container">
+  <main class="p-4">
     <NuxtPage />
   </main>
-  <Promote/>
   <Footer/>
 </template>
