@@ -43,6 +43,28 @@ button {
 
 .dark {
   ::-webkit-scrollbar-thumb {
-    background: #1e3263;
+    background-color: #1e3263;
+  }
+}
+
+.tooltip {
+  position: relative;
+  white-space: nowrap;
+
+  &::before {
+    content: attr(data-tooltip);
+    transition: 250ms ease-in-out;
+    transform: translateY(calc(-100% - 8px));
+    position: absolute;
+    display: none;
+    background-color: #1d293d;
+    color: #f5f5f5;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+
+  &:hover::before {
+    display: block;
   }
 }
