@@ -31,4 +31,10 @@ export const tutorialsList: NavigationMenuItem[] = [
     to: "/courses/react",
     icon: "famicons:logo-react",
   },
+  {
+    label: "Tailwind",
+    description: "Learn building basic of Tailwind",
+    to: "/courses/tailwind",
+    icon: "logos:tailwindcss-icon",
+  }
 ];
