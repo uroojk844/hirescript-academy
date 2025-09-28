@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: "course",
+});
+
 const route = useRoute();
 const { data: page, pending } = await useAsyncData(
   `${route.params.course}-first-page`,

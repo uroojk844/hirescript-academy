@@ -12,7 +12,9 @@ function togglePreview() {
 </script>
 
 <template>
-  <div class="bg-[#e5e5e5] dark:bg-slate-900 rounded-md overflow-hidden my-8 max-w-3xl relative border border-accented">
+  <div
+    class="bg-[#e5e5e5] dark:bg-slate-900 rounded-md my-8 max-w-3xl relative border border-accented"
+  >
     <section
       class="print:hidden flex justify-between items-center py-2 px-4 border-b border-accented"
     >
@@ -27,7 +29,22 @@ function togglePreview() {
           <slot name="title">index.html</slot>
         </small>
 
-        <button @click="togglePreview" class="grid place-items-center">
+        <button
+          data-tooltip="Open in playgound"
+          @click="() => setCode(text?.textContent || '', true)"
+          class="grid place-items-center tooltip"
+        >
+          <icon
+            name="material-symbols:deployed-code-outline"
+            class="cursor-pointer"
+          />
+        </button>
+
+        <button
+          @click="togglePreview"
+          class="grid place-items-center tooltip"
+          :data-tooltip="!preview ? 'Preview' : 'Code'"
+        >
           <icon v-if="!preview" name="mdi:web" class="cursor-pointer" />
           <icon v-else name="mdi:code-block-braces" class="cursor-pointer" />
         </button>

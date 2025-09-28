@@ -1,5 +1,5 @@
 <template>
-    <section class=" -m-4 bg-gray-200 dark:bg-gray-800 py-16">
+    <section class="bg-gray-200 dark:bg-gray-800 py-16">
     <div class="max-w-8xl mx-auto px-4 md:px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="flex flex-col gap-2 text-center lg:text-left">
         <h2 class="text-3xl sm:text-4xl font-semibold">Helping learners</h2>

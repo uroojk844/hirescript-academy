@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const colorMode = useColorMode();
+const { $monaco } = useNuxtApp();
 
 const isDark = computed({
   get() {
@@ -9,13 +10,25 @@ const isDark = computed({
     colorMode.preference = _isDark ? "dark" : "light";
   },
 });
+
+function toggleEditorTheme() {
+  if (!isDark.value) {
+    $monaco.editor.setTheme("vs");
+  } else {
+    $monaco.editor.setTheme("my");
+  }
+}
+
+watch(isDark, toggleEditorTheme);
 </script>
 
 <template>
   <div class="flex gap-2 items-center justify-end max-lg:ml-auto">
     <ClientOnly v-if="!colorMode?.forced">
       <UButton
-        :icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'"
+        :icon="isDark ? 'uil:sun' : 'uil:moon'"
+        aria-label="switch theme"
+        :aria-pressed="'Dark theme ' + isDark ? 'enabled' : 'disabled'"
         color="neutral"
         variant="outline"
         size="md"
