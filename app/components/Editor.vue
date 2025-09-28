@@ -27,6 +27,10 @@ function togglePreview() {
           <slot name="title">index.html</slot>
         </small>
 
+        <button @click="() => setCode(text?.textContent || '', true)" class="grid place-items-center">
+          <icon name="uil:desktop" class="cursor-pointer" />
+        </button>
+
         <button @click="togglePreview" class="grid place-items-center">
           <icon v-if="!preview" name="mdi:web" class="cursor-pointer" />
           <icon v-else name="mdi:code-block-braces" class="cursor-pointer" />

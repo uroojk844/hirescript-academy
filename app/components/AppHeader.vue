@@ -1,21 +1,11 @@
 <script setup lang="ts">
 import type { NavigationMenuItem, TabsItem } from "@nuxt/ui";
-import { tutorialsList } from "~/assets/data/tutorials-list";
+import { menuItems } from "~/router";
 
 defineProps<{
   sidebarItems?: NavigationMenuItem[];
 }>();
 
-const menuItems: NavigationMenuItem[] = [
-  {
-    label: "Home",
-    to: "/",
-  },
-  {
-    label: "Tutorials",
-    children: tutorialsList,
-  },
-];
 
 const tabs: TabsItem[] = [
   {
@@ -36,6 +26,8 @@ const tabs: TabsItem[] = [
     <div class="flex gap-2 items-center">
       <USlideover title="Hirescript" side="left" class="lg:hidden">
         <UButton
+          aria-label="open sidebar"
+          aria-expanded="false"
           icon="uil:bars"
           variant="link"
           class="p-0 text-slate-950 dark:text-white"
@@ -46,6 +38,8 @@ const tabs: TabsItem[] = [
           <div class="flex w-full justify-between">
             <Logo :show-icon="true" />
             <UButton
+              aria-label="close sidebar"
+              aria-expanded="true"
               @click="close"
               icon="uil:times"
               variant="link"

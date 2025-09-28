@@ -9,6 +9,7 @@ const {showIcon = false}= defineProps<{
     <div class="flex gap-2 items-center">
       <img
         src="/favicon.svg"
+        alt="hirescript-logo"
         class="w-8 not-dark:invert lg:block"
         :class="{ 'hidden': !showIcon }"
       />
