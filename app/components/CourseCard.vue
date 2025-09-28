@@ -7,7 +7,7 @@ defineProps({
 })
 </script>
 <template>
-    <div class="max-w-sm border rounded overflow-hidden border-gray-300">
+    <div class="max-w-sm border rounded overflow-hidden border-accented">
         <div class="overflow-hidden">
             <img :src="course.image" class="w-full h-full object-cover" alt="">
         </div>
