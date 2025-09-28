@@ -13,7 +13,7 @@ const {showIcon = false}= defineProps<{
         class="w-8 not-dark:invert lg:block"
         :class="{ 'hidden': !showIcon }"
       />
-      <span>Hirescript</span>
+      <span>Hirescript Academy</span>
     </div>
   </nuxt-link>
 </template>
