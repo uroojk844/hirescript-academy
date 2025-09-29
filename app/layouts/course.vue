@@ -25,7 +25,10 @@ const sidebarItems = computed<NavigationMenuItem[]>(() => {
   } else return [];
 });
 
+const container = ref<HTMLElement>();
+
 const currentRouteIndex = computed(() => {
+  container.value?.scrollTo({ top: 0 });
   return sidebarItems.value.findIndex((i) => i.to == route.path);
 });
 </script>
@@ -40,6 +43,7 @@ const currentRouteIndex = computed(() => {
       <u-navigation-menu :items="sidebarItems" orientation="vertical" />
     </aside>
     <main
+      ref="container"
       class="p-4 prose lg:prose-xl dark:prose-invert max-w-none overflow-y-auto"
     >
       <nuxt-page />

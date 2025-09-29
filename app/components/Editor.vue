@@ -57,7 +57,7 @@ function togglePreview() {
       </span>
       <iframe
         v-if="preview"
-        class="bg-white size-full h-96"
+        class="bg-white size-full h-96 rounded-b-md"
         :srcdoc="text?.textContent"
       ></iframe>
     </div>

@@ -7,20 +7,21 @@ const icons = {
 
 <template>
   <footer class="w-full bg-white dark:bg-[#030712] text-gray-600 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
-    <div class="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12 py-16 px-6 md:px-20">
-      <div class="space-y-4 md:w-1/3">
+    <div class="max-w-8xl mx-auto flex flex-col sm:flex-row justify-between items-start md:items-center gap-12 py-16 px-6 md:px-16">
+      <div class="space-y-4 w-full">
+        <img src="/favicon.svg" class="not-dark:invert"/>
         <h1 class="text-slate-950 dark:text-white font-bold text-lg">HireScript</h1>
         <p class="text-sm">All rights reserved</p>
         <div class="flex space-x-4 mt-2">
           <a href="https://www.instagram.com/hellohirescript/" target="_blank" rel="noopener noreferrer">
-            <UIcon name="i-mdi-instagram" class="w-6 h-6 text-slate-950 dark:text-white hover:text-slate-500 cursor-pointer" />
+            <icon name="mdi:instagram" class="w-6 h-6 text-slate-950 dark:text-white hover:text-slate-500 cursor-pointer" />
           </a>
           <a href="https://www.linkedin.com/company/hirescript-app/" target="_blank" rel="noopener noreferrer">
-            <UIcon name="i-mdi-linkedin" class="w-6 h-6 text-slate-950 dark:text-white hover:text-slate-500 cursor-pointer" />
+            <icon name="mdi:linkedin" class="w-6 h-6 text-slate-950 dark:text-white hover:text-slate-500 cursor-pointer" />
           </a>
         </div>
       </div>
-      <div class="flex flex-col sm:flex-row gap-12 md:gap-20 md:w-2/3 justify-end">
+      <div class="flex w-full flex-col sm:flex-row gap-12 md:gap-20 justify-between sm:justify-end">
         <div>
           <h2 class="text-slate-950 dark:text-white font-semibold mb-3">Company</h2>
           <ul class="space-y-2">
@@ -38,7 +39,6 @@ const icons = {
             <li><a href="https://www.hirescript.tech/#/use" target="_blank" rel="noopener noreferrer" class="hover:text-slate-500">Terms of Use</a></li>
           </ul>
         </div>
-
       </div>
     </div>
   </footer>

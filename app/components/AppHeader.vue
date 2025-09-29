@@ -6,7 +6,6 @@ defineProps<{
   sidebarItems?: NavigationMenuItem[];
 }>();
 
-
 const tabs: TabsItem[] = [
   {
     label: "Chapters",
@@ -21,7 +20,7 @@ const tabs: TabsItem[] = [
 
 <template>
   <header
-    class="print:hidden px-4 py-2 flex items-center gap-2 border-b border-b-accented"
+    class="print:hidden bg-default px-4 py-2 flex items-center gap-2 border-b border-b-accented"
   >
     <div class="flex gap-2 items-center">
       <USlideover title="Hirescript" side="left" class="lg:hidden">
@@ -81,10 +80,13 @@ const tabs: TabsItem[] = [
       <Logo />
     </div>
 
+    <!-- desktop navbar Home, tutorials, etc 
+    config -> grid-cols-3
+    -->
     <lazy-u-navigation-menu
       color="primary"
       :items="menuItems"
-      class="mx-auto w-full max-w-xl justify-center hidden lg:flex"
+      class="mx-auto w-full max-w-4xl justify-center hidden lg:flex"
     />
 
     <Themes />
