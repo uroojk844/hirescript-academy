@@ -9,6 +9,10 @@ const preview = ref(false);
 function togglePreview() {
   preview.value = !preview.value;
 }
+
+const title = ref<HTMLElement>();
+
+const isHTML = computed(() => title.value?.textContent.endsWith(".html"));
 </script>
 
 <template>
@@ -25,11 +29,12 @@ function togglePreview() {
       </div>
 
       <div class="flex items-center gap-3">
-        <small class="[&>p]:m-0">
+        <small class="[&>p]:m-0" ref="title">
           <slot name="title">index.html</slot>
         </small>
 
         <button
+          v-if="isHTML"
           data-tooltip="Open in playgound"
           @click="() => setCode(text?.textContent || '', true)"
           class="grid place-items-center tooltip"
@@ -41,6 +46,7 @@ function togglePreview() {
         </button>
 
         <button
+          v-if="isHTML"
           @click="togglePreview"
           class="grid place-items-center tooltip"
           :data-tooltip="!preview ? 'Preview' : 'Code'"
