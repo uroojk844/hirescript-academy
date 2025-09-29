@@ -16,6 +16,19 @@ const tabs: TabsItem[] = [
     slot: "menu" as const,
   },
 ];
+
+const route = useRoute();
+const isOpen = ref(false);
+watch(
+  () => route.params,
+  () => {
+    if (isOpen.value) handleClose();
+  }
+);
+
+function handleClose() {
+  isOpen.value = false;
+}
 </script>
 
 <template>
@@ -23,8 +36,14 @@ const tabs: TabsItem[] = [
     class="print:hidden bg-default px-4 py-2 flex items-center gap-2 border-b border-b-accented"
   >
     <div class="flex gap-2 items-center">
-      <USlideover title="Hirescript" side="left" class="lg:hidden">
+      <USlideover
+        :open="isOpen"
+        title="Hirescript"
+        side="left"
+        class="lg:hidden"
+      >
         <UButton
+          @click="isOpen = true"
           aria-label="open sidebar"
           aria-expanded="false"
           icon="uil:bars"
@@ -33,13 +52,13 @@ const tabs: TabsItem[] = [
           size="xl"
         />
 
-        <template #header="{ close }">
+        <template #header>
           <div class="flex w-full justify-between">
             <Logo :show-icon="true" />
             <UButton
               aria-label="close sidebar"
               aria-expanded="true"
-              @click="close"
+              @click="handleClose"
               icon="uil:times"
               variant="link"
               class="p-0 text-slate-950 dark:text-white"
