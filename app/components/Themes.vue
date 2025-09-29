@@ -41,7 +41,7 @@ watch(isDark, toggleEditorTheme);
     </ClientOnly>
 
     <UModal>
-      <u-button>Sign in</u-button>
+      <!-- <u-button>Sign in</u-button> -->
 
       <template #content>
         <lazy-auth-form />
