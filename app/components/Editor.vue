@@ -37,7 +37,7 @@ const isHTML = computed(() => title.value?.textContent.endsWith(".html"));
           v-if="isHTML"
           data-tooltip="Open in playgound"
           @click="() => setCode(text?.textContent || '', true)"
-          class="grid place-items-center tooltip"
+          class="grid place-items-center"
         >
           <icon
             name="material-symbols:deployed-code-outline"
@@ -48,7 +48,7 @@ const isHTML = computed(() => title.value?.textContent.endsWith(".html"));
         <button
           v-if="isHTML"
           @click="togglePreview"
-          class="grid place-items-center tooltip"
+          class="grid place-items-center"
           :data-tooltip="!preview ? 'Preview' : 'Code'"
         >
           <icon v-if="!preview" name="mdi:web" class="cursor-pointer" />
