@@ -12,7 +12,7 @@ onMounted(() => {
 
     let c: ReturnType<typeof setTimeout>;
     codeEditor.onDidChangeModelContent(() => {
-      if(c) clearTimeout(c);
+      if (c) clearTimeout(c);
       c = setTimeout(() => {
         setCode(codeEditor.getValue());
       }, 750);
@@ -122,12 +122,15 @@ onUnmounted(() => setCode(""));
       size="80"
       class="animate-bounce"
     />
-    <h1 class="text-3xl font-bold animate-pulse">
+    <h1 class="text-3xl text-center font-bold animate-pulse">
       Creating workspace for you...
     </h1>
   </div>
-  <section v-show="!isLoading" class="grid grid-cols-2 h-full">
-    <div ref="container" class="not-dark:border-r border-accented z-0"></div>
-    <iframe :srcdoc="getCode" class="size-full"></iframe>
+  <section v-show="!isLoading" class="grid sm:grid-cols-2 h-full">
+    <div
+      ref="container"
+      class="not-dark:border-r border-accented z-0 max-sm:h-[85dvh]"
+    ></div>
+    <iframe :srcdoc="getCode" class="w-full h-[90dvh] sm:h-full "></iframe>
   </section>
 </template>

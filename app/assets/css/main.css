@@ -40,6 +40,7 @@ button {
 
 ::-webkit-scrollbar-thumb {
   background: #ccc;
+  cursor: grab;
 }
 
 .dark {
@@ -48,7 +49,7 @@ button {
   }
 }
 
-.tooltip {
+[data-tooltip] {
   position: relative;
   white-space: nowrap;
 

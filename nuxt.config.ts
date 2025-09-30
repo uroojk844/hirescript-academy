@@ -1,5 +1,4 @@
 import tailwindcss from "@tailwindcss/vite";
-import monacoEditorPlugin from "vite-plugin-monaco-editor";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
