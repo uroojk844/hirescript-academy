@@ -1,5 +1,5 @@
 ---
-title: Best Practices and Common Patterns
+title: Best Practices and Patterns
 description: Learn industry best practices and common design patterns for maintainable Tailwind CSS code.
 navigation:
   order: 20

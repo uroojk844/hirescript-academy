@@ -1,5 +1,5 @@
 ---
-title: Pseudo-classes and Pseudo-elements
+title: Pseudo classes and elements
 description: Learn how to use pseudo-classes and pseudo-elements in Tailwind CSS for advanced styling.
 navigation:
   order: 13
