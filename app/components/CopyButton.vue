@@ -15,6 +15,7 @@ async function copy() {
 
 <template>
   <button
+    data-tooltip="Copy code"
     @click="copy"
     class="grid place-items-center hover:opacity-100 active:scale-95 bg-transparent"
   >

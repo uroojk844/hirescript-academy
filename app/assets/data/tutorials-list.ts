@@ -35,7 +35,7 @@ export const tutorialsList: NavigationMenuItem[] = [
     label: "Tailwind",
     description: "Learn building basic of Tailwind",
     to: "/courses/tailwind",
-    icon: "logos:tailwindcss-icon",
+    icon: "ri:tailwind-css-fill",
   },
   {
     label: "Python",

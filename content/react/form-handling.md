@@ -13,7 +13,10 @@ In React, form elements like `<input>`, `<textarea>`, and `<select>` are usually
 ---
 
 ## 1. Handling Input with State
-
+::Editor
+#title
+App.js
+#default
 ```jsx
 import React, { useState } from "react";
 
@@ -38,9 +41,15 @@ function App() {
 }
 
 export default App;
-2. Handling Multiple Inputs
-jsx
-Copy code
+```
+::
+
+## 2. Handling Multiple Inputs
+::Editor
+#title
+App.js
+#default
+```jsx
 import React, { useState } from "react";
 
 function App() {
@@ -77,15 +86,20 @@ function App() {
 }
 
 export default App;
-3. Controlled vs Uncontrolled Components
+```
+::
+## 3. Controlled vs Uncontrolled Components
 Controlled Component: Value is managed by React state.
 
 Uncontrolled Component: Value is managed by the DOM (using ref).
 
 Example (uncontrolled input):
 
-jsx
-Copy code
+::Editor
+#title
+App.js
+#default
+```jsx
 import React, { useRef } from "react";
 
 function App() {
@@ -104,9 +118,14 @@ function App() {
 }
 
 export default App;
-4. Handling Textarea and Select
-jsx
-Copy code
+```
+::
+## 4. Handling Textarea and Select
+::Editor
+#title
+App.js
+#default
+```jsx
 function App() {
   const [bio, setBio] = useState("");
   const [fruit, setFruit] = useState("Mango");
@@ -129,5 +148,7 @@ function App() {
     </div>
   );
 }
+```
+::
 ✅ You’ve learned how to handle forms and user input in React.
 Next, we’ll explore Conditional Rendering.

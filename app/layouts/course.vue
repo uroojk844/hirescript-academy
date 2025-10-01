@@ -1,0 +1,59 @@
+<script setup lang="ts">
+import type { ContentNavigationItem } from "@nuxt/content";
+import type { NavigationMenuItem } from "@nuxt/ui";
+
+const { data: courses } = await useAsyncData("courses", () =>
+  queryCollectionNavigation("content").order("navigation", "ASC")
+);
+
+const route = useRoute();
+
+const sidebarItems = computed<NavigationMenuItem[]>(() => {
+  if (route.params.course) {
+    let topics = courses.value?.find((course) =>
+      course.path.startsWith(`/${route.params.course}`)
+    );
+
+    return (
+      topics?.children
+        ?.sort((a, b) => Number(a.order) - Number(b.order))
+        ?.map((child) => ({
+          label: child.title,
+          to: "/courses" + child.path,
+        })) || []
+    );
+  } else return [];
+});
+
+const container = ref<HTMLElement>();
+
+const currentRouteIndex = computed(() => {
+  container.value?.scrollTo({ top: 0 });
+  return sidebarItems.value.findIndex((i) => i.to == route.path);
+});
+</script>
+
+<template>
+  <AppHeader :sidebarItems />
+
+  <div class="grid lg:grid-cols-[280px_auto] h-[calc(100vh-65px)] container">
+    <aside
+      class="hidden print:hidden lg:grid p-4 gap-4 border-r border-accented overflow-x-hidden"
+    >
+      <u-navigation-menu :items="sidebarItems" orientation="vertical" />
+    </aside>
+    <main
+      ref="container"
+      class="p-4 prose lg:prose-xl dark:prose-invert max-w-none overflow-y-auto"
+    >
+      <nuxt-page />
+
+      <div class="flex gap-8 justify-end" v-if="currentRouteIndex >= 0">
+        <UButton variant="soft" :to="sidebarItems[currentRouteIndex - 1]?.to">
+          Prev
+        </UButton>
+        <UButton :to="sidebarItems[currentRouteIndex + 1]?.to">Next</UButton>
+      </div>
+    </main>
+  </div>
+</template>

@@ -7,9 +7,9 @@ defineProps({
 })
 </script>
 <template>
-    <div class="border rounded overflow-hidden border-gray-300">
-        <div class="h-[180px] overflow-hidden">
-            <img :src="course.image" class="w-full h-full object-cover" alt=""> // connect
+    <div class="max-w-xs hover:scale-105 transition-transform duration-300 border rounded overflow-hidden border-accented">
+        <div class="overflow-hidden">
+            <img :src="course.image" class="w-full h-full object-cover" alt="">
         </div>
         <div class="flex flex-col gap-y-3 p-4">
             <div>{{ course.title }}</div>
