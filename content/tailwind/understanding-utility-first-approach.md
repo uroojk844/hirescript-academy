@@ -1,5 +1,5 @@
 ---
-title: Understanding Utility-First Approach
+title: Utility-First Approach
 description: Master the core philosophy behind Tailwind CSS and learn to think in utilities.
 navigation:
   order: 3
