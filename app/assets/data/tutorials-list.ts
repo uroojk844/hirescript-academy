@@ -42,5 +42,11 @@ export const tutorialsList: NavigationMenuItem[] = [
     description: "Learn building basic of Python",
     to: "/courses/python",
     icon: "simple-icons:python",
+  },
+   {
+    label: "Express",
+    description: "Learn building basic of Express",
+    to: "/courses/express",
+    icon: "simple-icons:express",
   }
 ];
