@@ -48,5 +48,11 @@ export const tutorialsList: NavigationMenuItem[] = [
     description: "Learn building basic of Express",
     to: "/courses/express",
     icon: "simple-icons:express",
+  },
+  {
+    label: "Node",
+    description: "Learn building basic of Node",
+    to: "/courses/node",
+    icon: "simple-icons:nodedotjs"
   }
 ];
