@@ -36,5 +36,23 @@ export const tutorialsList: NavigationMenuItem[] = [
     description: "Learn building basic of Tailwind",
     to: "/courses/tailwind",
     icon: "ri:tailwind-css-fill",
+  },
+   {
+    label: "Python",
+    description: "Learn building basic of Python",
+    to: "/courses/python",
+    icon: "simple-icons:python",
+  },
+   {
+    label: "Express",
+    description: "Learn building basic of Express",
+    to: "/courses/express",
+    icon: "simple-icons:express",
+  },
+  {
+    label: "Node",
+    description: "Learn building basic of Node",
+    to: "/courses/node",
+    icon: "simple-icons:nodedotjs"
   }
 ];
