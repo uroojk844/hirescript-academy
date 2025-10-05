@@ -25,17 +25,26 @@ pip install matplotlib seaborn
 ```
 
 **Importing Libraries**:
+::Editor
+#title
+libs.py
+#default
 ```python
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import numpy as np
 ```
+::
 
 ## 2. Creating Basic Plots with Matplotlib
 Matplotlib’s `pyplot` module provides a simple interface for creating plots like line, scatter, and bar charts.
 
 **Example: Line and Scatter Plots**
+::Editor
+#title
+line_sactter.py
+#default
 ```python
 # Data
 x = np.array([1, 2, 3, 4, 5])
@@ -59,6 +68,7 @@ plt.legend()
 plt.grid(True)
 plt.show()
 ```
+::
 
 **Expected Output**:
 - A line plot with a blue line and circular markers, labeled axes, and a grid.
@@ -68,6 +78,10 @@ plt.show()
 Bar plots compare categorical data, while histograms visualize the distribution of numerical data.
 
 **Example: Bar Plot and Histogram**
+::Editor
+#title
+bar.py
+#default
 ```python
 # Bar plot
 categories = ['A', 'B', 'C']
@@ -86,6 +100,7 @@ plt.xlabel('Value')
 plt.ylabel('Frequency')
 plt.show()
 ```
+::
 
 **Expected Output**:
 - A bar plot with green bars for categories A, B, and C.
@@ -95,6 +110,10 @@ plt.show()
 Seaborn simplifies creating statistical visualizations like box plots, violin plots, and heatmaps with minimal code.
 
 **Example: Box Plot with Seaborn**
+::Editor
+#title
+seaborn.py
+#default
 ```python
 # Sample data in a Pandas DataFrame
 data = pd.DataFrame({
@@ -109,6 +128,7 @@ sns.boxplot(x='Category', y='Value', data=data, palette='Set2')
 plt.title('Box Plot by Category')
 plt.show()
 ```
+::
 
 **Expected Output**:
 - A box plot showing the distribution of values across categories A, B, and C with different medians and spreads.
@@ -117,6 +137,10 @@ plt.show()
 Seaborn excels at visualizing relationships, such as correlations in a heatmap or pair plots for multiple variables.
 
 **Example: Heatmap**
+::Editor
+#title
+heatmap.py
+#default
 ```python
 # Correlation matrix
 data = pd.DataFrame({
@@ -131,6 +155,7 @@ sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', vmin=-1, vmax=1)
 plt.title('Correlation Heatmap')
 plt.show()
 ```
+::
 
 **Expected Output**:
 - A heatmap showing the correlation matrix with color gradients (red for positive, blue for negative) and numerical annotations.
@@ -151,6 +176,10 @@ Mar,Phone,90,45000
 ```
 
 **Code**:
+::Editor
+#title
+sales.py
+#default
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -220,6 +249,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+::
 
 **Expected Output**:
 - **Bar Plot**: Stacked bars showing sales of Laptops and Phones for each month.

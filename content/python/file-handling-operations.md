@@ -22,7 +22,10 @@ In this tutorial, you'll learn:
 ## 1. Basic File Operations
 
 ### Opening and Closing Files
-
+::Editor
+#title
+opening_closing.py
+#default
 ```python
 # Basic file opening (manual close required)
 file = open("example.txt", "r")
@@ -34,9 +37,13 @@ with open("example.txt", "r") as file:
     content = file.read()
     # File automatically closes after this block
 ```
+::
 
 ### File Modes
-
+::Editor
+#title
+file_modes.py
+#default
 ```python
 # Common file modes:
 # 'r'  - Read (default)
@@ -53,11 +60,15 @@ file_write = open("output.txt", "w")     # Write text
 file_append = open("log.txt", "a")       # Append text
 file_binary = open("image.png", "rb")    # Read binary
 ```
+::
 
 ## 2. Reading Files
 
 ### Reading Entire File
-
+::Editor
+#title
+reading_files.py
+#default
 ```python
 # Read entire file as single string
 with open("sample.txt", "r") as file:
@@ -65,6 +76,7 @@ with open("sample.txt", "r") as file:
     print("Full content:")
     print(content)
 ```
+::
 
 **Output:**
 ```
@@ -75,7 +87,10 @@ This is line 3.
 ```
 
 ### Reading Line by Line
-
+::Editor
+#title
+reading_line_by_line.py
+#default
 ```python
 # Method 1: read all lines into a list
 with open("sample.txt", "r") as file:
@@ -94,6 +109,7 @@ with open("sample.txt", "r") as file:
     print("First:", first_line.strip())
     print("Second:", second_line.strip())
 ```
+::
 
 **Output:**
 ```
@@ -106,7 +122,10 @@ Second: This is line 2.
 ```
 
 ### Reading with Specific Encoding
-
+::Editor
+#title
+reading_with_specific_encoding.py
+#default
 ```python
 # Read file with specific encoding
 with open("unicode_text.txt", "r", encoding="utf-8") as file:
@@ -118,11 +137,15 @@ with open("problematic.txt", "r", encoding="utf-8", errors="ignore") as file:
     content = file.read()
     # errors options: 'ignore', 'replace', 'strict'
 ```
+::
 
 ## 3. Writing Files
 
 ### Writing Text to Files
-
+::Editor
+#title
+writing_txt.py
+#default
 ```python
 # Write (overwrites existing content)
 with open("output.txt", "w") as file:
@@ -136,6 +159,7 @@ with open("output.txt", "w") as file:
 
 print("File written successfully!")
 ```
+::
 
 **Output:**
 ```
@@ -150,7 +174,10 @@ Line 3
 ```
 
 ### Appending to Files
-
+::Editor
+#title
+appending.py
+#default
 ```python
 # Append to existing file
 with open("log.txt", "a") as file:
@@ -164,9 +191,13 @@ with open("log.txt", "a") as file:
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     file.write(f"[{timestamp}] Application started\n")
 ```
+::
 
 ### Creating New Files
-
+::Editor
+#title
+new_files.py
+#default
 ```python
 # Create new file (fails if exists)
 try:
@@ -176,11 +207,15 @@ try:
 except FileExistsError:
     print("File already exists!")
 ```
+::
 
 ## 4. Working with CSV Files
 
 ### Reading CSV Files
-
+::Editor
+#title
+reading_csv.py
+#default
 ```python
 import csv
 
@@ -200,6 +235,7 @@ with open("data.csv", "r") as file:
     for row in csv_reader:
         print(f"Name: {row['name']}, Age: {row['age']}")
 ```
+::
 
 **Sample data.csv:**
 ```
@@ -221,7 +257,10 @@ Name: Charlie, Age: 35
 ```
 
 ### Writing CSV Files
-
+::Editor
+#title
+writing_csv.py
+#default
 ```python
 import csv
 
@@ -252,9 +291,13 @@ with open("output_dict.csv", "w", newline="") as file:
 
 print("CSV files created successfully!")
 ```
+::
 
 ### Advanced CSV Operations
-
+::Editor
+#title
+csv_operations.py
+#default
 ```python
 import csv
 
@@ -271,11 +314,15 @@ with open("custom.csv", "w", newline="") as file:
     csv_writer = csv.writer(file, delimiter=";", quoting=csv.QUOTE_ALL)
     csv_writer.writerows(data)
 ```
+::
 
 ## 5. Working with JSON Files
 
 ### Reading JSON Files
-
+::Editor
+#title
+json.py
+#default
 ```python
 import json
 
@@ -290,8 +337,13 @@ json_string = '{"name": "Alice", "age": 25, "skills": ["Python", "JavaScript"]}'
 parsed_data = json.loads(json_string)
 print("Parsed:", parsed_data)
 ```
+::
 
 **Sample data.json:**
+::Editor
+#title
+data.json
+#default
 ```json
 {
     "users": [
@@ -301,6 +353,7 @@ print("Parsed:", parsed_data)
     "total": 2
 }
 ```
+::
 
 **Output:**
 ```
@@ -310,7 +363,10 @@ Parsed: {'name': 'Alice', 'age': 25, 'skills': ['Python', 'JavaScript']}
 ```
 
 ### Writing JSON Files
-
+::Editor
+#title
+writing_json.py
+#default
 ```python
 import json
 
@@ -336,6 +392,7 @@ print(json_string)
 with open("compact.json", "w") as file:
     json.dump(data, file, separators=(",", ":"))
 ```
+::
 
 **Output (output.json):**
 ```json
@@ -357,7 +414,10 @@ with open("compact.json", "w") as file:
 ```
 
 ### JSON with Custom Objects
-
+::Editor
+#title
+custom_objects.py
+#default
 ```python
 import json
 from datetime import datetime
@@ -387,11 +447,15 @@ json_string = json.dumps(student, cls=StudentEncoder, indent=2)
 print("Encoded student:")
 print(json_string)
 ```
+::
 
 ## 6. Binary File Operations
 
 ### Reading Binary Files
-
+::Editor
+#title
+reading_binary_files.py
+#default
 ```python
 # Read binary file
 with open("image.png", "rb") as file:
@@ -409,9 +473,13 @@ with open("large_file.bin", "rb") as file:
         # Process chunk here
         print(f"Read chunk of {len(chunk)} bytes")
 ```
+::
 
 ### Writing Binary Files
-
+::Editor
+#title
+writing_binary_files.py
+#default
 ```python
 # Write binary data
 binary_data = bytes([0, 1, 2, 3, 4, 5])
@@ -425,9 +493,13 @@ with open("source.png", "rb") as source:
 
 print("Binary file copied successfully!")
 ```
+::
 
 ### Working with ByteArrays
-
+::Editor
+#title
+bytearrays.py
+#default
 ```python
 # Create and manipulate byte array
 data = bytearray(b"Hello")
@@ -438,11 +510,16 @@ print(data.decode())  # Output: Jello
 with open("output.bin", "wb") as file:
     file.write(data)
 ```
+::
+
 
 ## 7. File and Directory Management
 
 ### Checking File Existence
-
+::Editor
+#title
+file_dir_management.py
+#default
 ```python
 import os
 
@@ -458,9 +535,13 @@ if os.path.isfile("data.txt"):
 if os.path.isdir("my_folder"):
     print("It's a directory")
 ```
+::
 
 ### Getting File Information
-
+::Editor
+#title
+file_info.py
+#default
 ```python
 import os
 from datetime import datetime
@@ -480,9 +561,12 @@ filename = "document.pdf"
 name, extension = os.path.splitext(filename)
 print(f"Name: {name}, Extension: {extension}")
 ```
-
+::
 ### File Operations
-
+::Editor
+#title
+file_ops.py
+#default
 ```python
 import os
 import shutil
@@ -502,9 +586,13 @@ if os.path.exists("temp.txt"):
     os.remove("temp.txt")
     print("File deleted!")
 ```
+::
 
 ### Directory Operations
-
+::Editor
+#title
+dir_ops.py
+#default
 ```python
 import os
 import shutil
@@ -530,9 +618,13 @@ os.rmdir("empty_folder")
 # Remove directory tree
 shutil.rmtree("folder_with_contents")
 ```
+::
 
 ### Walking Directory Trees
-
+::Editor
+#title
+working_dir_trees.py
+#default
 ```python
 import os
 
@@ -550,9 +642,13 @@ for root, dirs, files in os.walk("."):
             full_path = os.path.join(root, file)
             print(f"Found Python file: {full_path}")
 ```
+::
 
 ### Working with Paths
-
+::Editor
+#title
+working_with_paths.py
+#default
 ```python
 import os
 
@@ -573,9 +669,13 @@ print(f"Directory: {directory}, Filename: {filename}")
 home_path = os.path.expanduser("~/documents")
 print("Home path:", home_path)
 ```
+::
 
 ### Using Pathlib (Modern Approach)
-
+::Editor
+#title
+practices.py
+#default
 ```python
 from pathlib import Path
 
@@ -609,11 +709,15 @@ for item in folder.iterdir():
 for py_file in Path(".").rglob("*.py"):
     print(f"Python file: {py_file}")
 ```
+::
 
 ## 8. Practical Examples
 
 ### Example 1: Log File Analyzer
-
+::Editor
+#title
+log_file_analyser.py
+#default
 ```python
 from collections import Counter
 from datetime import datetime
@@ -648,9 +752,13 @@ def analyze_log_file(filename):
 # Usage
 # analyze_log_file("access.log")
 ```
+::
 
 ### Example 2: CSV Data Processor
-
+::Editor
+#title
+csv_data_processor.py
+#default
 ```python
 import csv
 
@@ -688,9 +796,14 @@ def process_sales_data(input_file, output_file):
 # Usage
 # process_sales_data("sales.csv", "summary.csv")
 ```
+::
+
 
 ### Example 3: Configuration Manager
-
+::Editor
+#title
+config_manager.py
+#default
 ```python
 import json
 
@@ -762,9 +875,13 @@ config.set("debug", True)
 config.set("database.port", 3306)
 config.save_config()
 ```
+::
 
 ### Example 4: File Backup System
-
+::Editor
+#title
+file_backup_system.py
+#default
 ```python
 import os
 import shutil
@@ -812,6 +929,7 @@ def backup_files(source_dir, backup_dir, extensions=None):
 # Usage
 # backup_files("./documents", "./backups", extensions=[".txt", ".pdf", ".docx"])
 ```
+::
 
 ## Best Practices
 

@@ -25,14 +25,23 @@ Databases are essential for storing and managing data in applications. This less
 - Perfect for learning and prototyping.
 
 **Importing sqlite3**:
+::Editor
+#title
+sqlite3.py
+#default
 ```python
 import sqlite3
 ```
+::
 
 ## 2. Creating a Database and Table
 Use `sqlite3` to connect to a database and create tables to store structured data.
 
 **Example: Creating a Table**
+::Editor
+#title
+table.py
+#default
 ```python
 import sqlite3
 import logging
@@ -68,6 +77,7 @@ def create_table():
 
 create_table()
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -83,6 +93,10 @@ Tasks table created successfully
 Insert data into tables using the SQL `INSERT` statement.
 
 **Example: Inserting Data**
+::Editor
+#title
+insert_data.py
+#default
 ```python
 def add_task(title: str):
     """Add a task to the database."""
@@ -103,6 +117,7 @@ def add_task(title: str):
 add_task("Learn SQL")
 add_task("Build database app")
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -120,6 +135,10 @@ Task 'Build database app' added successfully
 Retrieve data using the SQL `SELECT` statement.
 
 **Example: Querying Data**
+::Editor
+#title
+querying_data.py
+#default
 ```python
 def get_tasks():
     """Retrieve all tasks from the database."""
@@ -143,6 +162,7 @@ def get_tasks():
 
 get_tasks()
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -159,6 +179,10 @@ ID: 2, Title: Build database app, Done: 0
 Modify existing data with `UPDATE` and remove data with `DELETE`.
 
 **Example: Update and Delete**
+::Editor
+#title
+update_delete.py
+#default
 ```python
 def update_task(task_id: int, done: bool):
     """Update the done status of a task."""
@@ -203,6 +227,7 @@ def delete_task(task_id: int):
 update_task(1, True)
 delete_task(2)
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -220,6 +245,10 @@ Task ID 2 deleted successfully
 Build a command-line task manager that stores tasks in an SQLite database, supporting CRUD operations.
 
 **Code**:
+::Editor
+#title
+task_manager.py
+#default
 ```python
 import sqlite3
 import logging
@@ -350,6 +379,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+::
 
 **Expected Output**:
 ```plaintext

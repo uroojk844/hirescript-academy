@@ -125,6 +125,10 @@ pip freeze > requirements.txt
 
 **Step 3: Write a Simple Scraper**
 Create a file `scraper.py`:
+::Editor
+#title
+scraper.py
+#default
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -138,6 +142,7 @@ paragraphs = soup.find_all('p')
 for p in paragraphs:
     print(p.text)
 ```
+::
 
 **Step 4: Run the Script**
 ```bash

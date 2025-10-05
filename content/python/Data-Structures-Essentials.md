@@ -22,7 +22,10 @@ In this tutorial, you'll learn:
 Lists are ordered, mutable collections that can store any type of data.
 
 ### Creating Lists
-
+::Editor
+#title
+list.py
+#default
 ```python
 # Different ways to create lists
 empty_list = []
@@ -35,6 +38,7 @@ print("Numbers:", numbers)
 print("Mixed types:", mixed)
 print("Nested list:", nested)
 ```
+::
 
 **Output:**
 ```
@@ -45,7 +49,10 @@ Nested list: [[1, 2], [3, 4], [5, 6]]
 ```
 
 ### Accessing Elements
-
+::Editor
+#title
+accessing.py
+#default
 ```python
 fruits = ["apple", "banana", "cherry", "date", "elderberry"]
 
@@ -60,6 +67,7 @@ print("From index 2:", fruits[2:])
 print("Every other:", fruits[::2])
 print("Reversed:", fruits[::-1])
 ```
+::
 
 **Output:**
 ```
@@ -73,7 +81,10 @@ Reversed: ['elderberry', 'date', 'cherry', 'banana', 'apple']
 ```
 
 ### Modifying Lists
-
+::Editor
+#title
+modifying.py
+#default
 ```python
 colors = ["red", "green", "blue"]
 
@@ -98,6 +109,7 @@ print("After pop:", colors)
 del colors[0]                    # Delete by index
 print("After del:", colors)
 ```
+::
 
 **Output:**
 ```
@@ -111,7 +123,10 @@ After del: ['orange', 'blue', 'yellow', 'purple']
 ```
 
 ### List Methods
-
+::Editor
+#title
+list_methods.py
+#default
 ```python
 numbers = [3, 1, 4, 1, 5, 9, 2, 6]
 
@@ -135,6 +150,7 @@ print("Copy:", numbers_copy)
 numbers_copy.clear()
 print("Cleared copy:", numbers_copy)
 ```
+:: 
 
 **Output:**
 ```
@@ -148,7 +164,10 @@ Cleared copy: []
 ```
 
 ### List Comprehensions
-
+::Editor
+#title
+list_comprehensions.py
+#default
 ```python
 # Basic list comprehension
 squares = [x**2 for x in range(1, 6)]
@@ -166,6 +185,7 @@ print("Labels:", labels)
 matrix = [[i*j for j in range(1, 4)] for i in range(1, 4)]
 print("Matrix:", matrix)
 ```
+::
 
 **Output:**
 ```
@@ -180,7 +200,10 @@ Matrix: [[1, 2, 3], [2, 4, 6], [3, 6, 9]]
 Tuples are ordered, immutable collections. Once created, they cannot be modified.
 
 ### Creating Tuples
-
+::Editor
+#title
+tuples.py
+#default
 ```python
 # Different ways to create tuples
 empty_tuple = ()
@@ -195,6 +218,7 @@ print("Coordinates:", coordinates)
 print("Mixed:", mixed)
 print("Nested:", nested)
 ```
+::
 
 **Output:**
 ```
@@ -206,7 +230,10 @@ Nested: ((1, 2), (3, 4))
 ```
 
 ### Tuple Operations
-
+::Editor
+#title
+tuple_operations.py
+#default
 ```python
 tuple1 = (1, 2, 3)
 tuple2 = (4, 5, 6)
@@ -227,6 +254,7 @@ print("Last three:", combined[-3:])
 print("Count of 2:", combined.count(2))
 print("Index of 5:", combined.index(5))
 ```
+::
 
 **Output:**
 ```
@@ -239,7 +267,10 @@ Index of 5: 4
 ```
 
 ### Tuple Packing and Unpacking
-
+::Editor
+#title
+packing_unpacking.py
+#default
 ```python
 # Packing
 person = "John", 25, "Engineer"
@@ -262,6 +293,7 @@ print(f"Before swap: a={a}, b={b}")
 a, b = b, a
 print(f"After swap: a={a}, b={b}")
 ```
+::
 
 **Output:**
 ```
@@ -279,7 +311,10 @@ After swap: a=20, b=10
 Dictionaries store data as key-value pairs. Keys must be unique and immutable.
 
 ### Creating Dictionaries
-
+::Editor
+#title
+dict.py
+#default
 ```python
 # Different ways to create dictionaries
 empty_dict = {}
@@ -292,6 +327,7 @@ print("Student:", student)
 print("Using dict():", using_dict)
 print("From tuples:", from_tuples)
 ```
+::
 
 **Output:**
 ```
@@ -302,7 +338,10 @@ From tuples: {'x': 1, 'y': 2, 'z': 3}
 ```
 
 ### Accessing and Modifying
-
+::Editor
+#title
+dict_access_modify.py
+#default
 ```python
 person = {"name": "Charlie", "age": 30, "city": "New York"}
 
@@ -322,6 +361,7 @@ removed_age = person.pop("age")
 print("After deletion:", person)
 print("Removed age:", removed_age)
 ```
+::
 
 **Output:**
 ```
@@ -334,7 +374,10 @@ Removed age: 31
 ```
 
 ### Dictionary Methods
-
+::Editor
+#title
+dict_methods.py
+#default
 ```python
 inventory = {"apples": 50, "bananas": 30, "oranges": 25}
 
@@ -355,6 +398,7 @@ print("After setdefault:", inventory)
 inv_copy = inventory.copy()
 print("Copy:", inv_copy)
 ```
+::
 
 **Output:**
 ```
@@ -367,7 +411,10 @@ Copy: {'apples': 60, 'bananas': 30, 'oranges': 25, 'grapes': 40, 'pears': 20}
 ```
 
 ### Dictionary Comprehensions
-
+::Editor
+#title
+dict_comprehensions.py
+#default
 ```python
 # Basic dictionary comprehension
 squares_dict = {x: x**2 for x in range(1, 6)}
@@ -388,6 +435,7 @@ original = {"a": 1, "b": 2, "c": 3}
 inverted = {v: k for k, v in original.items()}
 print("Inverted:", inverted)
 ```
+::
 
 **Output:**
 ```
@@ -402,7 +450,10 @@ Inverted: {1: 'a', 2: 'b', 3: 'c'}
 Sets are unordered collections of unique elements.
 
 ### Creating Sets
-
+::Editor
+#title
+sets.py
+#default
 ```python
 # Different ways to create sets
 empty_set = set()                # {} creates empty dict!
@@ -415,6 +466,7 @@ print("Numbers:", numbers)
 print("From list:", from_list)
 print("From string:", from_string)
 ```
+::
 
 **Output:**
 ```
@@ -425,7 +477,10 @@ From string: {'e', 'h', 'l', 'o'}
 ```
 
 ### Set Operations
-
+::Editor
+#title
+set_operations.py
+#default
 ```python
 a = {1, 2, 3, 4, 5}
 b = {4, 5, 6, 7, 8}
@@ -446,6 +501,7 @@ print("Difference b-a:", b - a)
 print("Symmetric difference:", a ^ b)
 print("Symmetric diff method:", a.symmetric_difference(b))
 ```
+::
 
 **Output:**
 ```
@@ -460,7 +516,10 @@ Symmetric diff method: {1, 2, 3, 6, 7, 8}
 ```
 
 ### Modifying Sets
-
+::Editor
+#title
+set_modify.py
+#default
 ```python
 colors = {"red", "green", "blue"}
 
@@ -482,6 +541,7 @@ popped = colors.pop()  # Removes arbitrary element
 print("Popped:", popped)
 print("After pop:", colors)
 ```
+::
 
 **Output:**
 ```
@@ -494,7 +554,10 @@ After pop: {'yellow', 'orange', 'purple', 'pink', 'red'}
 ```
 
 ### Set Comprehensions
-
+::Editor
+#title
+set_comprehensions.py
+#default
 ```python
 # Basic set comprehension
 squares = {x**2 for x in range(1, 6)}
@@ -509,6 +572,7 @@ numbers = [1, 2, 2, 3, 3, 3, 4, 4, 5]
 unique = {x for x in numbers}
 print("Unique:", unique)
 ```
+::
 
 **Output:**
 ```
@@ -520,7 +584,10 @@ Unique: {1, 2, 3, 4, 5}
 ## 5. Practical Examples
 
 ### Example 1: Student Grade Management
-
+::Editor
+#title
+stud_grade_management.py
+#default
 ```python
 # Using dictionary to store student grades
 students = {
@@ -539,6 +606,7 @@ averages = {name: sum(grades)/len(grades) for name, grades in students.items()}
 top_student = max(averages, key=averages.get)
 print(f"\nTop student: {top_student} with {averages[top_student]:.2f}")
 ```
+::
 
 **Output:**
 ```
@@ -550,7 +618,10 @@ Top student: Charlie with 93.33
 ```
 
 ### Example 2: Word Frequency Counter
-
+::Editor
+#title
+word_freq_counter.py
+#default
 ```python
 text = "hello world hello python python python"
 
@@ -566,6 +637,7 @@ unique_words = set(text.split())
 print("Unique words:", unique_words)
 print("Number of unique words:", len(unique_words))
 ```
+::
 
 **Output:**
 ```
@@ -575,7 +647,10 @@ Number of unique words: 3
 ```
 
 ### Example 3: List Manipulation
-
+::Editor
+#title
+list_manpulation.py
+#default
 ```python
 # Remove duplicates while preserving order
 numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3]
@@ -595,6 +670,7 @@ nested = [[1, 2], [3, 4], [5, 6]]
 flattened = [item for sublist in nested for item in sublist]
 print("Flattened:", flattened)
 ```
+::
 
 **Output:**
 ```

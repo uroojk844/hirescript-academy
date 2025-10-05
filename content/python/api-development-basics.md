@@ -2,10 +2,10 @@
 title: API Development Basics
 description: Learn to build and deploy RESTful APIs using Flask and FastAPI, enabling data exchange between applications with Python.
 navigation:
-  order: 16
+   order: 16
 ---
 
-# API Development Basics (Flask/FastAPI)
+# API Development Basics
 
 APIs (Application Programming Interfaces) allow applications to communicate by exposing data and functionality over the web. This lesson introduces **Flask** and **FastAPI**, two popular Python frameworks for building RESTful APIs. You'll learn to create endpoints, handle requests, and deploy a simple API, making it beginner-friendly yet practical for real-world use.
 
@@ -20,14 +20,23 @@ APIs (Application Programming Interfaces) allow applications to communicate by e
 A RESTful API uses HTTP methods (GET, POST, PUT, DELETE) to perform CRUD operations (Create, Read, Update, Delete). **Flask** is a lightweight, flexible framework, while **FastAPI** is modern, fast, and supports asynchronous programming with automatic documentation.
 
 **Installation**:
+::Editor
+#title
+install.sh
+#default
 ```bash
 pip install flask fastapi uvicorn
 ```
+::
 
 ## 2. Building a Simple Flask API
 Flask is easy to set up and ideal for small APIs. Let’s create a basic API with GET and POST endpoints.
 
 **Example: Flask API**
+::Editor
+#title
+flask.py
+#default
 ```python
 from flask import Flask, jsonify, request
 import logging
@@ -76,11 +85,17 @@ def add_task():
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
 ```
+::
 
 **Running the Flask API**:
+::Editor
+#title
+run_flask.sh
+#default
 ```bash
-python app.py
+python flask.py
 ```
+::
 
 **Testing the API**:
 - GET `http://localhost:5000/tasks`:
@@ -105,6 +120,10 @@ python app.py
 FastAPI is faster, supports async/await, and generates automatic OpenAPI documentation (accessible at `/docs`).
 
 **Example: FastAPI**
+::Editor
+#title
+fastapi.py
+#default
 ```python
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
@@ -155,11 +174,17 @@ if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
 ```
+::
 
 **Running the FastAPI**:
+::Editor
+#title
+run_fastapi.sh
+#default
 ```bash
-uvicorn app:app --host 0.0.0.0 --port 8000
+uvicorn fastapi:app --host 0.0.0.0 --port 8000
 ```
+::
 
 **Testing the API**:
 - GET `http://localhost:8000/tasks`:
@@ -185,13 +210,22 @@ uvicorn app:app --host 0.0.0.0 --port 8000
 Both frameworks support input validation. FastAPI uses Pydantic models for automatic validation, while Flask requires manual checks.
 
 **Example: Flask Validation**
+::Editor
+#title
+flask_validation.py
+#default
 ```python
 # In Flask add_task route
 if not data or 'title' not in data or not isinstance(data['title'], str):
     return jsonify({"error": "Valid title is required"}), 400
 ```
+::
 
 **Example: FastAPI Validation (Automatic via Pydantic)**
+::Editor
+#title
+fastapi_validation.py
+#default
 ```python
 # Pydantic model ensures 'title' is a string and 'id' is an integer
 class Task(BaseModel):
@@ -199,11 +233,16 @@ class Task(BaseModel):
     title: str
     done: bool = False
 ```
+::
 
 ## Mini-Project: Task Manager API
 Build a task manager API with endpoints to list, add, update, and delete tasks, using **FastAPI** for its modern features and documentation.
 
 **Code**:
+::Editor
+#title
+task_manager.py
+#default
 ```python
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
@@ -285,11 +324,17 @@ if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
 ```
+::
 
 **Running the API**:
+::Editor
+#title
+run_task_manager.sh
+#default
 ```bash
 uvicorn task_manager:app --host 0.0.0.0 --port 8000
 ```
+::
 
 **Testing the API**:
 - **GET** `http://localhost:8000/tasks`:
@@ -339,4 +384,3 @@ uvicorn task_manager:app --host 0.0.0.0 --port 8000
 
 ## What's Next?
 Explore **Database Operations (SQLite & SQL Basics)** (Lesson 17) to learn how to store and query API data persistently.
-

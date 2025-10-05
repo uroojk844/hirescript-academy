@@ -20,6 +20,11 @@ Python offers powerful advanced features that enable you to write cleaner, more 
 Decorators are functions that modify the behavior of other functions or methods without changing their code. They are often used for logging, authentication, or performance measurement.
 
 **Code Example: Simple Decorator**
+
+::Editor
+#title
+log_decorator.py
+#default
 ```python
 def log_decorator(func):
     def wrapper(*args, **kwargs):
@@ -35,6 +40,7 @@ def add(a, b):
 
 add(5, 3)
 ```
+::
 
 **Expected Output:**
 ```
@@ -51,6 +57,10 @@ add returned: 8
 Generators are functions that yield values one at a time, saving memory for large datasets. They use `yield` instead of `return` and can be iterated over like lists.
 
 **Code Example: Generator for Fibonacci Sequence**
+::Editor
+#title
+fibonacci.py
+#default
 ```python
 def fibonacci(n):
     a, b = 0, 1
@@ -61,6 +71,7 @@ def fibonacci(n):
 for num in fibonacci(10):
     print(num, end=" ")
 ```
+::
 
 **Expected Output:**
 ```
@@ -76,6 +87,10 @@ for num in fibonacci(10):
 Comprehensions provide a concise way to create lists, dictionaries, or sets from iterables, often replacing loops.
 
 **Code Example: List, Dict, and Set Comprehensions**
+::Editor
+#title
+comprehensions.py
+#default
 ```python
 # List Comprehension
 squares = [x**2 for x in range(10) if x % 2 == 0]
@@ -89,6 +104,7 @@ print(word_lengths)
 unique_vowels = {char for word in ["hello", "world"] for char in word if char in "aeiou"}
 print(unique_vowels)
 ```
+::
 
 **Expected Output:**
 ```
@@ -107,6 +123,10 @@ print(unique_vowels)
 Context managers handle resource acquisition and release using `with` statements, ensuring cleanup (e.g., closing files).
 
 **Code Example: Custom Context Manager**
+::Editor
+#title
+timer.py
+#default
 ```python
 class Timer:
     def __enter__(self):
@@ -121,6 +141,7 @@ class Timer:
 with Timer():
     sum(range(1000000))
 ```
+::
 
 **Expected Output (example):**
 ```
@@ -136,6 +157,10 @@ Execution time: 0.015625 seconds
 Lambda functions are anonymous functions defined with `lambda`. Higher-order functions take or return functions.
 
 **Code Example: Lambda with Map and Filter**
+::Editor
+#title
+lambda.py
+#default
 ```python
 numbers = [1, 2, 3, 4, 5]
 
@@ -147,6 +172,7 @@ print(squared)
 evens = list(filter(lambda x: x % 2 == 0, numbers))
 print(evens)
 ```
+::
 
 **Expected Output:**
 ```
@@ -163,6 +189,10 @@ print(evens)
 This project uses decorators, generators, and comprehensions to analyze text files, counting words and generating reports.
 
 **Code Example: Text Analyzer**
+::Editor
+#title
+time.py
+#default
 ```python
 import time
 
@@ -196,7 +226,7 @@ def analyze_text(file_path):
 # Assume 'sample.txt' contains: "Hello world hello again"
 print(analyze_text('sample.txt'))
 ```
-
+::
 **Expected Output (example):**
 ```
 word_generator took 0.0001 seconds

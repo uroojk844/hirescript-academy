@@ -25,14 +25,23 @@ pip install scikit-learn
 ```
 
 **Importing Scikit-Learn**:
+::Editor
+#title
+sklearn.py
+#default
 ```python
 import sklearn
 ```
+::
 
 ## 2. Data Preprocessing
 Preprocessing prepares data for modeling by handling missing values, scaling features, and encoding categorical variables.
 
 **Example: Scaling and Encoding**
+::Editor
+#title
+scaling_encoding.py
+#default
 ```python
 import pandas as pd
 from sklearn.preprocessing import StandardScaler, LabelEncoder
@@ -55,6 +64,7 @@ data[['Age', 'Salary']] = scaler.fit_transform(data[['Age', 'Salary']])
 print("Preprocessed Data:")
 print(data)
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -70,6 +80,10 @@ Preprocessed Data:
 Split data into training and testing sets to evaluate model performance.
 
 **Example: Train-Test Split**
+::Editor
+#title
+train_test_split.py
+#default
 ```python
 from sklearn.model_selection import train_test_split
 
@@ -83,6 +97,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 print("Training Features Shape:", X_train.shape)
 print("Testing Features Shape:", X_test.shape)
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -94,6 +109,10 @@ Testing Features Shape: (1, 2)
 Scikit-Learn supports various algorithms. Here, we use a linear regression model for a regression task.
 
 **Example: Linear Regression**
+::Editor
+#title
+linear_regression.py
+#default
 ```python
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
@@ -110,6 +129,7 @@ mse = mean_squared_error(y_test, y_pred)
 print("Mean Squared Error:", mse)
 print("Predictions:", y_pred)
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -121,6 +141,10 @@ Predictions: [-0.316228]  # Scaled value
 For classification tasks, use algorithms like logistic regression or decision trees.
 
 **Example: Logistic Regression**
+::Editor
+#title
+logistic_regression.py
+#default
 ```python
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
@@ -142,6 +166,7 @@ y_pred = clf.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy:", accuracy)
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -152,6 +177,10 @@ Accuracy: 1.0  # Example value, depends on data
 Cross-validation assesses model performance more robustly by splitting data multiple times.
 
 **Example: Cross-Validation**
+::Editor
+#title
+cross_validation.py
+#default
 ```python
 from sklearn.model_selection import cross_val_score
 
@@ -160,6 +189,7 @@ scores = cross_val_score(model, X, y, cv=3, scoring='neg_mean_squared_error')
 print("Cross-Validation MSE Scores:", -scores)
 print("Average MSE:", -scores.mean())
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -171,6 +201,10 @@ Average MSE: 0.15
 Build a classification model to predict iris species using the famous Iris dataset, incorporating preprocessing, training, and evaluation.
 
 **Code**:
+::Editor
+#title
+iris_classification.py
+#default
 ```python
 import pandas as pd
 import numpy as np
@@ -241,6 +275,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+::
 
 **Expected Output**:
 ```plaintext

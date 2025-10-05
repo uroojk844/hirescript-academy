@@ -29,6 +29,10 @@ pip install requests beautifulsoup4
 The `requests` library simplifies HTTP requests to fetch web page content.
 
 **Example**:
+::Editor
+#title
+example.py
+#default
 ```python
 import requests
 
@@ -58,11 +62,16 @@ print(content[:200])  # Print first 200 characters
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 ```
+::
 
 ## 3. Parsing HTML with BeautifulSoup
 `BeautifulSoup` makes it easy to navigate and extract data from HTML.
 
 **Example**:
+::Editor
+#title
+example.py
+#default
 ```python
 from bs4 import BeautifulSoup
 
@@ -77,6 +86,7 @@ html_content = fetch_page("https://example.com")
 title = extract_title(html_content)
 print(f"Page Title: {title}")
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -87,6 +97,10 @@ Page Title: Example Domain
 Use `BeautifulSoup` to target specific HTML elements like headings, links, or tables.
 
 **Example**:
+::Editor
+#title
+example.py
+#default
 ```python
 def extract_links(html_content: str) -> list:
     """Extract all links from an HTML page."""
@@ -99,6 +113,7 @@ links = extract_links(html_content)
 for link in links:
     print(f"Found link: {link}")
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -111,6 +126,10 @@ Found link: https://www.iana.org/domains/example
 - **Rate Limiting**: Add delays between requests to avoid being blocked.
 
 **Example with Delay**:
+::Editor
+#title
+example.py
+#default
 ```python
 import time
 
@@ -122,11 +141,16 @@ def fetch_with_delay(urls: list) -> list:
         time.sleep(1)  # 1-second delay between requests
     return contents
 ```
+::
 
 ## Mini-Project: Quote Scraper
 Build a web scraper to extract quotes from a sample website (e.g., `http://quotes.toscrape.com`).
 
 **Code**:
+::Editor
+#title
+quote_scraper.py
+#default
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -186,6 +210,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+::
 
 **Expected Output**:
 ```plaintext
