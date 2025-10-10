@@ -24,7 +24,10 @@ In this tutorial, you'll learn:
 Classes are blueprints for creating objects. Objects are instances of classes with their own data and behavior.
 
 ### Creating Your First Class
-
+::Editor
+#title
+first_class.py
+#default
 ```python
 # Define a simple class
 class Dog:
@@ -56,6 +59,8 @@ print(f"Species: {dog1.species}")
 print("\n" + dog2.name)
 print(dog2.bark())
 ```
+::
+
 
 **Output:**
 ```
@@ -69,7 +74,10 @@ Max says Woof!
 ```
 
 ### Instance vs Class Attributes
-
+::Editor
+#title
+instances_attributes.py
+#default
 ```python
 class Employee:
     # Class attribute
@@ -105,6 +113,7 @@ print(Employee.get_employee_count())
 print(Employee.is_workday("Monday"))
 print(Employee.is_workday("Sunday"))
 ```
+::
 
 **Output:**
 ```
@@ -119,7 +128,10 @@ False
 Encapsulation restricts direct access to some components and protects object integrity.
 
 ### Private and Protected Attributes
-
+::Editor
+#title
+private_protected.py
+#default
 ```python
 class BankAccount:
     def __init__(self, account_holder, balance):
@@ -155,6 +167,7 @@ print(account.get_balance())        # Use getter
 print(account.deposit(500))
 print(account.withdraw(300))
 ```
+::
 
 **Output:**
 ```
@@ -166,7 +179,10 @@ Withdrawn $300. New balance: $1200
 ```
 
 ### Property Decorators
-
+::Editor
+#title
+property_decorators.py
+#default
 ```python
 class Temperature:
     def __init__(self, celsius):
@@ -205,6 +221,7 @@ print(f"Updated Fahrenheit: {temp.fahrenheit}")
 temp.fahrenheit = 32
 print(f"Celsius from Fahrenheit: {temp.celsius}")
 ```
+::
 
 **Output:**
 ```
@@ -220,7 +237,10 @@ Celsius from Fahrenheit: 0.0
 Inheritance allows a class to inherit attributes and methods from another class.
 
 ### Single Inheritance
-
+::Editor
+#title
+single_inheritance.py
+#default
 ```python
 # Parent class (Base class)
 class Animal:
@@ -273,6 +293,7 @@ print("\n" + cat.info())
 print(cat.make_sound())
 print(cat.scratch())
 ```
+::
 
 **Output:**
 ```
@@ -287,7 +308,10 @@ Whiskers is scratching the furniture!
 ```
 
 ### Multi-level Inheritance
-
+::Editor
+#title
+multi_level_inheritance.py
+#default
 ```python
 class Vehicle:
     def __init__(self, brand, model):
@@ -320,6 +344,7 @@ print(tesla.drive())
 print(tesla.charge())
 print(f"Doors: {tesla.doors}")
 ```
+::
 
 **Output:**
 ```
@@ -330,7 +355,10 @@ Doors: 4
 ```
 
 ### Multiple Inheritance
-
+::Editor
+#title
+multiple_inheritance.py
+#default
 ```python
 class Flyer:
     def fly(self):
@@ -356,6 +384,7 @@ print(duck.swim())
 # Check Method Resolution Order (MRO)
 print(f"\nMRO: {Duck.__mro__}")
 ```
+::
 
 **Output:**
 ```
@@ -371,7 +400,10 @@ MRO: (<class '__main__.Duck'>, <class '__main__.Flyer'>, <class '__main__.Swimme
 Polymorphism allows objects of different classes to be treated as objects of a common parent class.
 
 ### Method Overriding
-
+::Editor
+#title
+method_overriding.py
+#default
 ```python
 class Shape:
     def __init__(self, name):
@@ -434,6 +466,7 @@ for shape in shapes:
     print(f"  Perimeter: {shape.perimeter():.2f}")
     print()
 ```
+::
 
 **Output:**
 ```
@@ -451,7 +484,10 @@ Triangle:
 ```
 
 ### Duck Typing
-
+::Editor
+#title
+duck_typing.py
+#default
 ```python
 # Duck typing: "If it walks like a duck and quacks like a duck, it's a duck"
 
@@ -481,6 +517,7 @@ animals = [Dog(), Cat(), Duck(), Cow()]
 for animal in animals:
     print(f"{animal.__class__.__name__}: {animal_sound(animal)}")
 ```
+::
 
 **Output:**
 ```
@@ -495,7 +532,10 @@ Cow: Moo!
 Abstraction hides complex implementation details and shows only essential features.
 
 ### Abstract Base Classes
-
+::Editor
+#title
+abstract_base_classes.py
+#default
 ```python
 from abc import ABC, abstractmethod
 
@@ -556,7 +596,7 @@ for processor in processors:
     print(processor.refund("TXN123"))
     print()
 ```
-
+::
 **Output:**
 ```
 Processing $100 via Credit Card
@@ -574,7 +614,10 @@ Refunding transaction TXN123 to Bitcoin wallet
 Special methods allow customization of built-in Python behaviors.
 
 ### Common Magic Methods
-
+::Editor
+#title
+common_magic_methods.py
+#default
 ```python
 class Book:
     def __init__(self, title, author, pages):
@@ -623,6 +666,7 @@ print(f"book2 > book1: {book2 > book1}")      # Uses __gt__
 
 print(f"\nTotal pages: {book1 + book2}")      # Uses __add__
 ```
+::
 
 **Output:**
 ```
@@ -638,7 +682,10 @@ Total pages: 700
 ```
 
 ### Container Magic Methods
-
+::Editor
+#title
+container_magic_methods.py
+#default
 ```python
 class Playlist:
     def __init__(self, name):
@@ -687,6 +734,7 @@ for song in playlist:
 del playlist[1]
 print(f"\nAfter deleting index 1: {list(playlist)}")
 ```
+::
 
 **Output:**
 ```
@@ -706,7 +754,10 @@ After deleting index 1: ['Song A', 'Song C']
 ## 7. Real-World Examples
 
 ### Example 1: Library Management System
-
+::Editor
+#title
+libs_managements_system.py
+#default
 ```python
 class LibraryItem:
     def __init__(self, title, item_id):
@@ -783,6 +834,7 @@ library.display_items()
 print(f"\n{book1.return_item()}")
 library.display_items()
 ```
+::
 
 **Output:**
 ```
@@ -812,7 +864,10 @@ City Library Collection:
 ```
 
 ### Example 2: E-commerce Shopping Cart
-
+::Editor
+#title
+e-commerce_cart.py
+#default
 ```python
 class Product:
     def __init__(self, name, price, stock):
@@ -885,7 +940,7 @@ cart.display_cart()
 
 print(f"\nLaptop stock remaining: {laptop.stock}")
 ```
-
+::
 **Output:**
 ```
 Added 2 Laptop(s) to cart
@@ -920,7 +975,10 @@ Laptop stock remaining: 4
 5. **Dependency Inversion**: Depend on abstractions, not concrete implementations
 
 ### Coding Best Practices
-
+::Editor
+#title
+practices.py
+#default
 ```python
 # Good: Descriptive class names (PascalCase)
 class UserAccount:
@@ -959,6 +1017,7 @@ class DatabaseInterface(ABC):
     def disconnect(self):
         pass
 ```
+::
 
 ## Key Takeaways
 

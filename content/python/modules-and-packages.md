@@ -22,6 +22,10 @@ A **module** is a single Python file (`.py`) containing functions, classes, or v
 
 **Code Example: Creating and Importing a Module**
 Create a file named `math_utils.py`:
+::Editor
+#title
+math_utils.py
+#default
 ```python
 # math_utils.py
 def add(a, b):
@@ -32,8 +36,13 @@ def subtract(a, b):
 
 PI = 3.14159
 ```
+::
 
 Now, use it in another script:
+::Editor
+#title
+math_utils.py
+#default
 ```python
 # main.py
 import math_utils
@@ -42,6 +51,7 @@ result1 = math_utils.add(5, 3)
 result2 = math_utils.subtract(5, 3)
 print(f"Add: {result1}, Subtract: {result2}, PI: {math_utils.PI}")
 ```
+::
 
 **Expected Output:**
 ```
@@ -61,6 +71,10 @@ Python offers several ways to import modules:
 - `from module_name import *`: Imports everything (avoid this to prevent namespace pollution).
 
 **Code Example: Different Import Methods**
+::Editor
+#title
+diff_import_methods.py
+#default
 ```python
 import math
 from datetime import datetime as dt
@@ -71,6 +85,7 @@ print(dt.now())       # Using alias
 print(add(10, 5))     # Using imported function
 print(PI)             # Using imported constant
 ```
+::
 
 **Expected Output (example):**
 ```
@@ -97,20 +112,35 @@ my_package/
 ```
 
 Create `utilities.py`:
+::Editor
+#title
+utilities.py
+#default
 ```python
 # my_package/utilities.py
 def greet(name):
     return f"Hello, {name}!"
 ```
+::
+
 
 Create `calculations.py`:
+::Editor
+#title
+calculations.py
+#default
 ```python
 # my_package/calculations.py
 def multiply(a, b):
     return a * b
 ```
+::
 
 Use the package in a script:
+::Editor
+#title
+examples.py
+#default
 ```python
 # main.py
 from my_package.utilities import greet
@@ -119,6 +149,7 @@ from my_package.calculations import multiply
 print(greet("Alice"))
 print(multiply(4, 5))
 ```
+::
 
 **Expected Output:**
 ```
@@ -135,6 +166,10 @@ Hello, Alice!
 Third-party packages, like `requests` or `numpy`, can be installed using `pip`. They extend Python’s functionality for specialized tasks.
 
 **Code Example: Using the `requests` Module**
+::Editor
+#title
+requests.py
+#default
 ```python
 import requests
 
@@ -145,6 +180,7 @@ try:
 except requests.RequestException as e:
     print(f"Error fetching data: {e}")
 ```
+::
 
 **Expected Output (example):**
 ```
@@ -169,6 +205,10 @@ finance_tracker/
 ```
 
 Create `transactions.py`:
+::Editor
+#title
+transactions.py
+#default
 ```python
 # finance_tracker/transactions.py
 class Transaction:
@@ -179,8 +219,13 @@ class Transaction:
         self.category = category
         self.type_ = type_
 ```
+::
 
 Create `reports.py`:
+::Editor
+#title
+reports.py
+#default
 ```python
 # finance_tracker/reports.py
 def generate_report(transactions):
@@ -192,8 +237,13 @@ def generate_report(transactions):
         "balance": total_income - total_expense
     }
 ```
+::
 
 Main script:
+::Editor
+#title
+main.py
+#default
 ```python
 # main.py
 from finance_tracker.transactions import Transaction
@@ -208,6 +258,7 @@ transactions = [
 report = generate_report(transactions)
 print(f"Report: {report}")
 ```
+::
 
 **Expected Output:**
 ```

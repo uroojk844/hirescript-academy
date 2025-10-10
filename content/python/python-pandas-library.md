@@ -25,14 +25,23 @@ pip install pandas
 ```
 
 **Importing Pandas**:
+::Editor
+#title
+pandas.py
+#default
 ```python
 import pandas as pd
 ```
+::
 
 ## 2. Pandas Series
 A Series is a one-dimensional array-like object that can hold data of any type, with an index for labeling.
 
 **Example: Creating and Manipulating a Series**
+::Editor
+#title
+creation_manipulation.py
+#default
 ```python
 import pandas as pd
 
@@ -49,6 +58,7 @@ data_squared = data ** 2
 print("\nSquared Series:")
 print(data_squared)
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -73,6 +83,10 @@ dtype: int64
 A DataFrame is a two-dimensional, tabular data structure with labeled rows and columns, similar to a spreadsheet.
 
 **Example: Creating a DataFrame**
+::Editor
+#title
+dataframes.py
+#default
 ```python
 # Create a DataFrame from a dictionary
 data = {
@@ -92,6 +106,7 @@ print(df['Name'])
 print("\nFirst row:")
 print(df.iloc[0])
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -118,6 +133,10 @@ Name: 0, dtype: object
 Pandas can read data from various formats like CSV, Excel, and JSON. Common exploration methods include `head()`, `info()`, and `describe()`.
 
 **Example: Loading a CSV File**
+::Editor
+#title
+csv.py
+#default
 ```python
 # Sample CSV content (save as 'employees.csv')
 """
@@ -139,6 +158,7 @@ print(df.info())
 print("\nSummary Statistics:")
 print(df.describe())
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -176,6 +196,10 @@ max    35.000000  60000.000000
 Handle missing data, duplicates, and incorrect types to prepare data for analysis.
 
 **Example: Handling Missing Data**
+::Editor
+#title
+handling_missing_data.py
+#default
 ```python
 # DataFrame with missing values
 data = {
@@ -197,6 +221,7 @@ df['Salary'] = df['Salary'].fillna(df['Salary'].median())
 print("\nCleaned DataFrame:")
 print(df)
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -219,6 +244,10 @@ Cleaned DataFrame:
 Filter rows based on conditions and group data for aggregation.
 
 **Example: Filtering and Grouping**
+::Editor
+#title
+filtering_grouping.py
+#default
 ```python
 # Filter employees with salary > 55000
 high_earners = df[df['Salary'] > 55000]
@@ -230,6 +259,7 @@ avg_salary_by_city = df.groupby('City')['Salary'].mean()
 print("\nAverage Salary by City:")
 print(avg_salary_by_city)
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -249,6 +279,10 @@ Name: Salary, dtype: float64
 Combine datasets using `merge()` or `concat()` for comprehensive analysis.
 
 **Example: Merging DataFrames**
+::Editor
+#title
+merging_df.py
+#default
 ```python
 # Additional DataFrame
 data2 = {
@@ -262,6 +296,7 @@ merged_df = pd.merge(df, df2, on='Name', how='left')
 print("Merged DataFrame:")
 print(merged_df)
 ```
+::
 
 **Expected Output**:
 ```plaintext
@@ -288,6 +323,10 @@ Phone,Electronics,500,0,2025-01-05
 ```
 
 **Code**:
+::Editor
+#title
+sales.py
+#default
 ```python
 import pandas as pd
 import logging
@@ -345,6 +384,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+::
 
 **Expected Output**:
 ```plaintext

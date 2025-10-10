@@ -1,6 +1,6 @@
 ---
 title: Python Basics Foundation
-description: Learn what Python is and why it's revolutionizing the tech Industry.
+description: Learn what Python is and why it's revolutionizing the tech industry.
 navigation:
   order: 1
 ---
@@ -21,8 +21,11 @@ In this tutorial, you'll learn:
 
 Variables are containers that store data. Python is dynamically typed, meaning you don't need to declare variable types explicitly.
 
-Here's a practical example:
+::Editor
+#title
+variables.py
 
+#default
 ```python
 # Numeric Types
 age = 25                    # Integer
@@ -44,17 +47,23 @@ print(f"Name: {name}, Age: {age}")
 print(f"Price: ${price}")
 print(f"Is student: {is_student}")
 ```
+::
 
 ### Explanation
 
-Python has several built-in data types. Integers store whole numbers without decimal points. Floats handle decimal numbers for precise calculations. Strings hold text data enclosed in quotes (single, double, or triple). Booleans represent True or False values for logical operations. Complex numbers are used for advanced mathematical computations.
+Python has several built-in data types. Integers store whole numbers without decimal points. Floats handle decimal numbers for precise calculations. Strings hold text data enclosed in quotes (single, double, or triple). Booleans represent `True` or `False` values for logical operations. Complex numbers are used for advanced mathematical computations.
 
-The `f-string` syntax (f"...{variable}...") provides a clean way to embed variables directly into strings.
+The `f-string` syntax (`f"...{variable}..."`) provides a clean way to embed variables directly into strings.
 
 ## Type Conversion
 
 Sometimes you need to convert data from one type to another.
 
+::Editor
+#title
+type_conversion.py
+
+#default
 ```python
 # String to Integer
 age_str = "25"
@@ -82,15 +91,21 @@ non_zero = 5
 print(f"bool(0) = {bool(zero)}")        # False
 print(f"bool(5) = {bool(non_zero)}")    # True
 ```
+::
 
 ### Explanation
 
-Type conversion allows you to transform data between different types. Use `int()` to convert to integers, `float()` for decimals, `str()` for text, and `bool()` for boolean values. Note that converting float to int truncates the decimal part. When converting to boolean, zero and empty values become False, while non-zero values become True.
+Type conversion allows you to transform data between different types. Use `int()` to convert to integers, `float()` for decimals, `str()` for text, and `bool()` for boolean values. Note that converting float to int truncates the decimal part. When converting to boolean, zero and empty values become `False`, while non-zero values become `True`.
 
 ## Operators
 
 Operators perform operations on variables and values.
 
+::Editor
+#title
+operators.py
+
+#default
 ```python
 # Arithmetic Operators
 a = 10
@@ -129,6 +144,7 @@ print(f"is_adult AND has_id: {is_adult and has_id}")   # Both must be True
 print(f"is_adult OR has_id: {is_adult or has_id}")     # At least one True
 print(f"NOT is_adult: {not is_adult}")                  # Inverts the value
 ```
+::
 
 ### Explanation
 
@@ -140,6 +156,11 @@ Comparison operators return boolean values and are essential for making decision
 
 Conditional statements allow your program to make decisions based on conditions.
 
+::Editor
+#title
+conditionals.py
+
+#default
 ```python
 # Simple if statement
 temperature = 25
@@ -193,6 +214,7 @@ if hour >= 9 and hour < 17 and not is_weekend:
 else:
     print("Office is closed.")
 ```
+::
 
 ### Explanation
 
@@ -204,6 +226,11 @@ Indentation is crucial in Python as it defines code blocks. All statements withi
 
 Loops allow you to repeat code multiple times efficiently.
 
+::Editor
+#title
+loops.py
+
+#default
 ```python
 # For loop with range
 print("Counting from 1 to 5:")
@@ -255,6 +282,7 @@ for num in range(1, 11):
         break  # Stop the loop
     print(num)
 ```
+::
 
 ### Explanation
 
@@ -268,6 +296,11 @@ The `else` clause after a loop executes only if the loop completes normally with
 
 Functions are reusable blocks of code that perform specific tasks.
 
+::Editor
+#title
+functions.py
+
+#default
 ```python
 # Simple function
 def greet():
@@ -339,6 +372,7 @@ squared = list(map(lambda x: x ** 2, numbers))
 print(f"Original: {numbers}")
 print(f"Squared: {squared}")
 ```
+::
 
 ### Explanation
 
@@ -352,6 +386,11 @@ The `*args` syntax allows functions to accept any number of positional arguments
 
 Let's combine what we've learned to build a practical grade calculator.
 
+::Editor
+#title
+grade_calculator.py
+
+#default
 ```python
 def calculate_grade(score):
     """
@@ -412,6 +451,7 @@ students = {
 for name, scores in students.items():
     display_report(name, scores)
 ```
+::
 
 ### Key Points
 
@@ -425,10 +465,25 @@ Initialize variables before using them in loops or conditions. Avoid using globa
 
 ## Common Pitfalls to Avoid
 
-Forgetting the colon at the end of if, for, while, and def statements is a syntax error. Incorrect indentation will cause IndentationError. Using assignment (`=`) instead of comparison (`==`) in conditions leads to bugs. Modifying a list while iterating over it can cause unexpected behavior. Forgetting to return a value from a function when you need one results in None.
+Forgetting the colon at the end of `if`, `for`, `while`, and `def` statements is a syntax error. Incorrect indentation will cause `IndentationError`. Using assignment (`=`) instead of comparison (`==`) in conditions leads to bugs. Modifying a list while iterating over it can cause unexpected behavior. Forgetting to return a value from a function when you need one results in `None`.
 
 Creating infinite loops by forgetting to update the condition variable will hang your program. Comparing floating-point numbers with exact equality can fail due to precision issues.
 
-## What's Next?
+## What’s Next?
 
 You've mastered Python's fundamental building blocks! In the next module, we'll explore **Data Structures Essentials**, where you'll learn about lists, tuples, sets, and dictionaries—powerful tools for organizing and manipulating data efficiently.
+
+### Key Takeaways:
+- Variables store different data types (int, float, string, boolean)
+- Operators perform arithmetic, comparison, and logical operations
+- Conditional statements (`if`, `elif`, `else`) control program flow
+- Loops (`for`, `while`) automate repetitive tasks
+- Functions make code reusable and modular
+- Practice combining these concepts in real-world projects
+
+## Practice Exercise
+1. Create a variable for your name and age, and print them using an f-string.
+2. Convert a string number to an integer and perform a calculation.
+3. Write a conditional statement to check if a number is positive, negative, or zero.
+4. Use a `for` loop to print even numbers from 1 to 10.
+5. Write a function that calculates the square of a number and test it.

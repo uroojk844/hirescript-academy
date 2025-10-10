@@ -21,6 +21,10 @@ Exception handling is a critical skill in Python programming that allows you to 
 Exceptions are errors that occur during program execution, disrupting the normal flow. Python provides built-in exceptions like `ValueError`, `TypeError`, and `ZeroDivisionError`. Exception handling allows you to catch and manage these errors without crashing your program.
 
 **Code Example: Basic Exception Handling**
+::Editor
+#title
+exception_handling.py
+#default
 ```python
 try:
     number = int(input("Enter a number: "))
@@ -34,6 +38,7 @@ else:
 finally:
     print("Execution complete.")
 ```
+::
 
 **Expected Output (if user inputs `5`):**
 ```
@@ -66,6 +71,10 @@ Execution complete.
 You can handle multiple exceptions in a single `except` block or chain multiple `except` blocks for specific error types. This makes your code more precise and user-friendly.
 
 **Code Example: Handling Multiple Exceptions**
+::Editor
+#title
+handling_multiple_exceptions.py
+#default
 ```python
 try:
     file_name = input("Enter file name: ")
@@ -79,6 +88,7 @@ except FileNotFoundError:
 except Exception as e:
     print(f"An unexpected error occurred: {e}")
 ```
+::
 
 **Expected Output (if file `data.txt` contains `10`):**
 ```
@@ -100,6 +110,10 @@ File not found!
 You can raise exceptions explicitly using the `raise` keyword to enforce conditions or signal errors.
 
 **Code Example: Raising Exceptions**
+::Editor
+#title
+raising_exceptions.py
+#default
 ```python
 def check_age(age):
     if age < 18:
@@ -112,6 +126,7 @@ try:
 except ValueError as e:
     print(f"Error: {e}")
 ```
+::
 
 **Expected Output (if user inputs `16`):**
 ```
@@ -133,6 +148,10 @@ Welcome, 20-year-old!
 You can define custom exceptions by creating a class that inherits from the built-in `Exception` class. This is useful for specific error scenarios in your application.
 
 **Code Example: Custom Exception**
+::Editor
+#title
+custom_exception.py
+#default
 ```python
 class InsufficientBalanceError(Exception):
     pass
@@ -153,6 +172,7 @@ try:
 except InsufficientBalanceError as e:
     print(f"Error: {e}")
 ```
+::
 
 **Expected Output:**
 ```
@@ -168,6 +188,10 @@ Error: Cannot withdraw 150. Balance is only 100!
 This mini-project simulates a shopping cart where users can add items, check out, and handle errors like insufficient stock or invalid inputs.
 
 **Code Example: Shopping Cart**
+::Editor
+#title
+shopping_cart.py
+#default
 ```python
 class StockError(Exception):
     pass
@@ -202,6 +226,7 @@ else:
 finally:
     print("Shopping session ended.")
 ```
+::
 
 **Expected Output (if adding 3 apples and 6 bananas):**
 ```

@@ -1,7 +1,8 @@
 ---
 title: Best Practices & Production Code
 description: Learn how to write clean, maintainable, and production-ready Python code, following style guides, testing strategies, and deployment best practices.
-navigation.order: 20
+navigation:
+   order: 20
 ---
 
 # Best Practices & Production Code
@@ -27,6 +28,10 @@ PEP 8 is Python’s official style guide, ensuring consistent and readable code.
 - Functions and variables: `snake_case`; Classes: `CamelCase`.
 
 **Example**:
+::Editor
+#title
+practices.py
+#default
 ```python
 # Bad
 def calc(x,y):return x+y
@@ -36,6 +41,7 @@ def calculate_sum(number_one, number_two):
     """Calculate the sum of two numbers."""
     return number_one + number_two
 ```
+::
 
 **Tool**: Use `flake8` to check PEP 8 compliance:
 ```bash
@@ -52,6 +58,10 @@ Break code into reusable functions and modules.
 
 **Example**:
 Instead of:
+::Editor
+#title
+practices.py
+#default
 ```python
 # Bad: Everything in one block
 print("Processing data...")
@@ -59,8 +69,13 @@ data = [1, 2, 3]
 result = sum(data) / len(data)
 print(result)
 ```
+::
 
 Use:
+::Editor
+#title
+practices.py
+#default
 ```python
 # Good: Modular function
 def calculate_average(numbers):
@@ -73,11 +88,16 @@ if __name__ == "__main__":
     result = calculate_average(data)
     print(f"Average: {result}")
 ```
+::
 
 ### Documentation
 Write docstrings for functions, classes, and modules.
 
 **Example**:
+::Editor
+#title
+practices.py
+#default
 ```python
 def fetch_data(url):
     """Fetch data from a given URL and return the response text.
@@ -92,6 +112,7 @@ def fetch_data(url):
     response = requests.get(url)
     return response.text
 ```
+::
 
 ## Testing Your Code
 
@@ -100,6 +121,10 @@ Use Python’s built-in `unittest` module to write tests.
 
 **Example**:
 Create `test_calculate.py`:
+::Editor
+#title
+test_calculate.py
+#default
 ```python
 import unittest
 from my_script import calculate_average
@@ -116,6 +141,7 @@ class TestCalculateAverage(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
+:: 
 
 Run tests:
 ```bash
@@ -154,6 +180,10 @@ pip install -r requirements.txt
 Add logging instead of `print` for production code.
 
 **Example**:
+::Editor
+#title
+logging.py
+#default
 ```python
 import logging
 
@@ -170,6 +200,7 @@ def process_data(data):
         logger.error(f"Error: {e}")
         raise
 ```
+::
 
 **Expected Output**: Logs written to `app.log`.
 
@@ -186,6 +217,10 @@ pip freeze > requirements.txt
 
 **Step 2: Write the Tool**
 Create `weather_tool.py`:
+::Editor
+#title
+weather_tool.py
+#default
 ```python
 import logging
 import requests
@@ -234,6 +269,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+::
 
 **Step 3: Test the Tool**
 ```bash
@@ -247,6 +283,10 @@ Weather: clear sky, Temperature: 15.5°C
 
 **Step 4: Write Tests**
 Create `test_weather_tool.py`:
+::Editor
+#title
+weather_tool.py
+#default
 ```python
 import unittest
 from weather_tool import fetch_weather
@@ -259,6 +299,7 @@ class TestWeatherTool(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
+::
 
 **Step 5: Deploy**
 Package the tool with a `requirements.txt` and share it. Ensure the API key is stored securely (e.g., in an environment variable).

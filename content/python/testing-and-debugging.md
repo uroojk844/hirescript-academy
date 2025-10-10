@@ -20,7 +20,8 @@ Testing and debugging are crucial for developing reliable Python applications. T
 Testing verifies that code behaves as expected. Unit tests focus on individual functions or methods. Python provides built-in modules like `unittest` and third-party libraries like `pytest` for testing.
 
 **Installation for pytest**:
-```bash
+
+```python
 pip install pytest
 ```
 
@@ -28,6 +29,10 @@ pip install pytest
 The `unittest` module is part of Python's standard library and supports test discovery, fixtures, and assertions.
 
 **Example: unittest**
+::Editor
+#title
+unittest.py
+#default
 ```python
 import unittest
 
@@ -47,6 +52,7 @@ class TestMathFunctions(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
+::
 
 **Running Tests**:
 ```bash
@@ -66,6 +72,10 @@ OK
 `pytest` is more flexible and requires less boilerplate code than `unittest`. It supports fixtures and parameterized tests.
 
 **Example: pytest**
+::Editor
+#title
+pytest.py
+#default
 ```python
 def multiply_numbers(a: int, b: int) -> int:
     """Multiply two numbers."""
@@ -77,7 +87,7 @@ def test_multiply_numbers():
     assert multiply_numbers(-1, 1) == -1
     assert multiply_numbers(0, 5) == 0
 ```
-
+::
 **Running Tests**:
 ```bash
 pytest test_multiply.py
@@ -97,6 +107,10 @@ test_multiply.py .                                                      [100%]
 `pdb` is Python's built-in debugger, allowing you to set breakpoints, inspect variables, and step through code.
 
 **Example: Using pdb**
+::Editor
+#title
+using_pdb.py
+#default
 ```python
 import pdb
 
@@ -110,6 +124,7 @@ def divide_numbers(a: float, b: float) -> float:
 result = divide_numbers(10, 2)
 print(result)
 ```
+::
 
 **Running with pdb**:
 ```bash
@@ -147,6 +162,10 @@ TDD involves writing tests before implementing code. This ensures requirements a
 3. Refactor the code while keeping tests passing.
 
 **Example: TDD for a Function**
+::Editor
+#title
+TDD.py
+#default
 ```python
 # Test first (failing)
 def test_subtract_numbers():
@@ -158,11 +177,16 @@ def subtract_numbers(a: int, b: int) -> int:
 
 # Run test (passing)
 ```
+::
 
 ## Mini-Project: Calculator with Tests and Debugging
 Create a simple calculator with addition, subtraction, multiplication, and division, including unit tests and debugging support.
 
 **Code (calculator.py)**:
+::Editor
+#title
+calci.py
+#default
 ```python
 import logging
 
@@ -199,8 +223,13 @@ class Calculator:
             raise ValueError("Cannot divide by zero")
         return a / b
 ```
+::
 
 **Test Code (test_calculator.py)**:
+::Editor
+#title
+test_calci.py
+#default
 ```python
 import pytest
 from calculator import Calculator
@@ -231,6 +260,7 @@ def test_divide(calc):
     with pytest.raises(ValueError):
         calc.divide(10, 0)
 ```
+::
 
 **Running Tests**:
 ```bash

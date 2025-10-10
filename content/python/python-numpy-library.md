@@ -21,6 +21,10 @@ NumPy is a powerful library for numerical computing in Python, providing support
 NumPy arrays (`ndarray`) are homogeneous, fixed-size collections that support fast operations. Import NumPy as `np` conventionally.
 
 **Code Example: Basic Array Creation**
+::Editor
+#title
+basic_array_creation.py
+#default
 ```python
 import numpy as np
 
@@ -44,6 +48,7 @@ linspace = np.linspace(0, 1, 5)
 print(arange)
 print(linspace)
 ```
+::
 
 **Expected Output:**
 ```
@@ -69,6 +74,10 @@ print(linspace)
 Arrays have attributes like `shape`, `dtype`, and `size`. Manipulate with reshaping, slicing, and indexing.
 
 **Code Example: Attributes and Slicing**
+::Editor
+#title
+attributes_slicing.py
+#default
 ```python
 import numpy as np
 
@@ -86,6 +95,7 @@ slice2 = arr[:, 1]   # Second column
 print(slice1)
 print(slice2)
 ```
+::
 
 **Expected Output:**
 ```
@@ -106,6 +116,10 @@ Shape: (2, 3), Dtype: int64, Size: 6
 NumPy supports element-wise operations, aggregations (sum, mean), and more.
 
 **Code Example: Operations and Aggregations**
+::Editor
+#title
+operations_aggregations.py
+#default
 ```python
 import numpy as np
 
@@ -130,6 +144,7 @@ exp = np.exp(b)
 print(sqrt)
 print(exp)
 ```
+::
 
 **Expected Output:**
 ```
@@ -149,6 +164,10 @@ print(exp)
 Broadcasting allows operations on arrays of different shapes. NumPy also includes linear algebra functions.
 
 **Code Example: Broadcasting and Dot Product**
+::Editor
+#title
+broadcasting_dot_product.py
+#default
 ```python
 import numpy as np
 
@@ -164,6 +183,7 @@ transpose = np.transpose(a)
 print(dot)
 print(transpose)
 ```
+::
 
 **Expected Output:**
 ```
@@ -184,6 +204,10 @@ print(transpose)
 This project simulates simple image manipulation using NumPy arrays (representing pixel values).
 
 **Code Example: Image Flipper**
+::Editor
+#title
+image_flipper.py
+#default
 ```python
 import numpy as np
 import matplotlib.pyplot as plt  # For visualization (assume installed)
@@ -212,6 +236,7 @@ plt.imshow(image, cmap='gray')
 plt.title("Original")
 plt.show()
 ```
+::
 
 **Expected Output:**
 ```

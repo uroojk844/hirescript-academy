@@ -21,6 +21,10 @@ Handling dates and times is crucial in many applications, from logging events to
 The `datetime` module includes classes for dates (`date`), times (`time`), and combined date-times (`datetime`). Use `today()` or `now()` for current values.
 
 **Code Example: Creating Date and Time Objects**
+::Editor
+#title
+date_time.py
+#default
 ```python
 from datetime import date, time, datetime
 
@@ -40,6 +44,7 @@ print(now)
 lunch_time = time(12, 30)
 print(lunch_time)
 ```
+::
 
 **Expected Output (example, assuming run on September 30, 2025):**
 ```
@@ -59,6 +64,10 @@ print(lunch_time)
 Format dates/times as strings using `strftime()`, and parse strings into objects with `strptime()`.
 
 **Code Example: Formatting and Parsing**
+::Editor
+#title
+formatting_parsing.py
+#default
 ```python
 from datetime import datetime
 
@@ -72,6 +81,7 @@ print(f"Formatted: {formatted}")
 parsed = datetime.strptime("2025-09-30 10:00:00", "%Y-%m-%d %H:%M:%S")
 print(f"Parsed: {parsed}")
 ```
+::
 
 **Expected Output (example):**
 ```
@@ -88,6 +98,10 @@ Parsed: 2025-09-30 10:00:00
 `timedelta` represents durations for adding/subtracting from dates/times.
 
 **Code Example: Date Calculations**
+::Editor
+#title
+data_calculations.py
+#default
 ```python
 from datetime import datetime, timedelta
 
@@ -106,6 +120,7 @@ birth_date = datetime(2000, 1, 1)
 age = now - birth_date
 print(f"Age in days: {age.days}")
 ```
+::
 
 **Expected Output (example):**
 ```
@@ -123,6 +138,10 @@ Age in days: 9402
 Use `pytz` for time zone support, as `datetime` has basic `tzinfo`.
 
 **Code Example: Time Zones**
+::Editor
+#title
+time_zones.py
+#default
 ```python
 from datetime import datetime
 import pytz
@@ -140,6 +159,7 @@ print(f"New York: {ny_now}")
 meeting = datetime(2025, 10, 1, 14, 0, tzinfo=pytz.UTC)
 print(f"Meeting in UTC: {meeting}")
 ```
+::
 
 **Expected Output (example):**
 ```
@@ -158,6 +178,10 @@ Meeting in UTC: 2025-10-01 14:00:00+00:00
 This project creates a simple scheduler to add events, check upcoming ones, and calculate time until events.
 
 **Code Example: Event Scheduler**
+::Editor
+#title
+event_schedules.py
+#default
 ```python
 from datetime import datetime, timedelta
 import pytz
@@ -189,6 +213,7 @@ upcoming = scheduler.upcoming_events()
 for name, delta in upcoming:
     print(f"{name} in {delta.days} days, {delta.seconds // 3600} hours")
 ```
+::
 
 **Expected Output (example, assuming now is 2025-09-30 10:00 EDT):**
 ```

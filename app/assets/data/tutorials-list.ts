@@ -54,5 +54,11 @@ export const tutorialsList: NavigationMenuItem[] = [
     description: "Learn building basic of Node",
     to: "/courses/node",
     icon: "simple-icons:nodedotjs"
+  },
+  {
+    label: "Next",
+    description: "Learn building basic of Next",
+    to: "/courses/next",
+    icon: "simple-icons:nextdotjs"
   }
 ];

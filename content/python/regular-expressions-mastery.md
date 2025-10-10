@@ -21,6 +21,10 @@ Regular expressions (regex) are a powerful tool for matching patterns in text, e
 Regex uses special characters to define patterns. Common ones include `.` (any character), `^` (start of string), `$` (end of string), and character classes like `\d` (digit), `\w` (word character), `\s` (whitespace).
 
 **Code Example: Basic Matching**
+::Editor
+#title
+matching.py
+#default
 ```python
 import re
 
@@ -31,6 +35,7 @@ match = re.search(pattern, text)
 if match:
     print(f"Found '{match.group()}' at position {match.start()}-{match.end()}")
 ```
+::
 
 **Expected Output:**
 ```
@@ -46,6 +51,10 @@ Found 'fox' at position 16-19
 Character classes match specific sets (e.g., `[a-z]` for lowercase letters). Quantifiers specify repetition: `*` (0+), `+` (1+), `?` (0 or 1), `{n}` (exactly n).
 
 **Code Example: Matching Emails**
+::Editor
+#title
+emails.py
+#default
 ```python
 import re
 
@@ -55,6 +64,7 @@ pattern = r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b"
 emails = re.findall(pattern, text)
 print(emails)
 ```
+::
 
 **Expected Output:**
 ```
@@ -72,6 +82,10 @@ print(emails)
 Groups `()` capture parts of the match for extraction. Use `\1` to reference groups in replacements.
 
 **Code Example: Extracting Phone Numbers**
+::Editor
+#title
+phone_numbers.py
+#default
 ```python
 import re
 
@@ -82,6 +96,7 @@ matches = re.finditer(pattern, text)
 for match in matches:
     print(f"Area code: {match.group(1)}, Local: {match.group(2)}-{match.group(3)}")
 ```
+::
 
 **Expected Output:**
 ```
@@ -98,6 +113,10 @@ Area code: 987, Local: 654-3210
 Lookaheads `(?=...)` and lookbehinds `(?<=...)` assert conditions without consuming text. Non-capturing groups `(?:...)` group without capturing.
 
 **Code Example: Password Validation**
+::Editor
+#title
+pwd_validation.py
+#default
 ```python
 import re
 
@@ -110,6 +129,7 @@ def validate_password(password):
 print(validate_password("Passw0rd!"))  # Valid
 print(validate_password("password"))   # Invalid
 ```
+::
 
 **Expected Output:**
 ```
@@ -133,6 +153,10 @@ This project parses a simple web server log to extract IP addresses, timestamps,
 ```
 
 **Code Example: Log Parser**
+::Editor
+#title
+log_parser.py
+#default
 ```python
 import re
 
@@ -147,6 +171,7 @@ def parse_log(file_path):
 
 parse_log('access.log')
 ```
+::
 
 **Expected Output:**
 ```
